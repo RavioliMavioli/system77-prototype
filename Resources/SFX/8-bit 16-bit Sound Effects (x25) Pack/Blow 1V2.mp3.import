@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://buj16hl47i1u6"
+path="res://.godot/imported/Blow 1V2.mp3-7afd15ac5a30c757ea96662a4df380e4.mp3str"
+
+[deps]
+
+source_file="res://Resources/SFX/8-bit 16-bit Sound Effects (x25) Pack/Blow 1V2.mp3"
+dest_files=["res://.godot/imported/Blow 1V2.mp3-7afd15ac5a30c757ea96662a4df380e4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,207 @@
+[gd_scene load_steps=11 format=3 uid="uid://bjdas61lcxqil"]
+
+[ext_resource type="Script" path="res://Script/UI/ui.gd" id="1_d73ef"]
+[ext_resource type="FontFile" uid="uid://bq5m6ur305wen" path="res://Fonts/Urbanist-fonts/Urbanist-Bold.ttf" id="2_07xyx"]
+[ext_resource type="Theme" uid="uid://30g5tad2j2bt" path="res://Script/UI/ui.tres" id="2_dwkvp"]
+[ext_resource type="Texture2D" uid="uid://b683ik7srtso5" path="res://Resources/UI/ammo.png" id="5_7xc4r"]
+[ext_resource type="Texture2D" uid="uid://cyt7tpc2ml8wq" path="res://Resources/UI/special.png" id="6_0d1m2"]
+[ext_resource type="LabelSettings" uid="uid://ca4kaifmlb6qi" path="res://Label/urbanist_bold.tres" id="6_tvcgk"]
+[ext_resource type="Texture2D" uid="uid://cn1r3wp168dgo" path="res://Resources/UI/health.png" id="7_vxtnf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f02yo"]
+line_spacing = 0.0
+font = ExtResource("2_07xyx")
+font_size = 32
+font_color = Color(1, 1, 1, 0.898039)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h3sg1"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7dmrk"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d73ef")
+
+[node name="Score2" type="Label" parent="."]
+layout_mode = 2
+offset_left = 800.0
+offset_top = 24.0
+offset_right = 1248.0
+offset_bottom = 68.0
+text = "SCORE:"
+label_settings = SubResource("LabelSettings_f02yo")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 2
+offset_left = 928.0
+offset_top = 24.0
+offset_right = 1376.0
+offset_bottom = 68.0
+text = "100"
+label_settings = SubResource("LabelSettings_f02yo")
+
+[node name="HighScore" type="Label" parent="."]
+layout_mode = 2
+offset_left = 256.0
+offset_top = 24.0
+offset_right = 704.0
+offset_bottom = 68.0
+text = "0"
+label_settings = SubResource("LabelSettings_f02yo")
+
+[node name="HighScore2" type="Label" parent="."]
+layout_mode = 2
+offset_left = 48.0
+offset_top = 24.0
+offset_right = 496.0
+offset_bottom = 68.0
+text = "HIGH SCORE:"
+label_settings = SubResource("LabelSettings_f02yo")
+
+[node name="Boss" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 128.0
+theme = ExtResource("2_dwkvp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Boss"]
+layout_mode = 2
+
+[node name="Items" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 832.0
+offset_right = 1280.0
+offset_bottom = 128.0
+theme = ExtResource("2_dwkvp")
+
+[node name="ItemList" type="ItemList" parent="Items"]
+visible = false
+layout_mode = 2
+item_count = 2
+item_0/text = ""
+item_1/text = ""
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Items"]
+visible = false
+layout_mode = 2
+
+[node name="Health" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 168.0
+offset_right = 648.0
+offset_bottom = 296.0
+scale = Vector2(0.7, 0.7)
+
+[node name="Health" type="Label" parent="Health"]
+layout_mode = 2
+offset_left = -328.0
+offset_top = 616.0
+offset_right = 94.0
+offset_bottom = 648.0
+text = "Health"
+label_settings = ExtResource("6_tvcgk")
+horizontal_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="Health/Health"]
+visible = false
+show_behind_parent = true
+layout_mode = 2
+offset_left = 259.0
+offset_right = 448.0
+offset_bottom = 27.0
+
+[node name="Healthbar" type="TextureProgressBar" parent="Health"]
+layout_mode = 2
+offset_left = -32.0
+offset_top = 663.0
+offset_right = 390.0
+offset_bottom = 686.0
+value = 100.0
+texture_progress = ExtResource("7_vxtnf")
+texture_progress_offset = Vector2(26, 0)
+
+[node name="Ammo" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1328.0
+offset_top = 664.0
+offset_right = 1368.0
+offset_bottom = 704.0
+scale = Vector2(0.75, 0.75)
+
+[node name="Ammo" type="MarginContainer" parent="Ammo"]
+layout_mode = 0
+offset_left = -552.0
+offset_top = -112.0
+offset_right = -64.0
+offset_bottom = 104.0
+theme = ExtResource("2_dwkvp")
+
+[node name="Text" type="VBoxContainer" parent="Ammo/Ammo"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 12
+
+[node name="LAmmoLabel" type="Label" parent="Ammo/Ammo/Text"]
+layout_mode = 2
+text = "Main Ammo        "
+label_settings = SubResource("LabelSettings_h3sg1")
+horizontal_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="Ammo/Ammo/Text/LAmmoLabel"]
+show_behind_parent = true
+layout_mode = 2
+offset_left = 259.0
+offset_right = 448.0
+offset_bottom = 27.0
+
+[node name="LAmmo" type="TextureProgressBar" parent="Ammo/Ammo/Text"]
+self_modulate = Color(0.196078, 0.764706, 1, 1)
+layout_mode = 2
+value = 100.0
+fill_mode = 1
+texture_progress = ExtResource("5_7xc4r")
+texture_progress_offset = Vector2(26, 0)
+
+[node name="RAmmoLabel" type="Label" parent="Ammo/Ammo/Text"]
+layout_mode = 2
+text = "Special Ammo        "
+label_settings = SubResource("LabelSettings_7dmrk")
+horizontal_alignment = 2
+
+[node name="ColorRect3" type="ColorRect" parent="Ammo/Ammo/Text/RAmmoLabel"]
+show_behind_parent = true
+layout_mode = 2
+offset_left = 259.0
+offset_right = 448.0
+offset_bottom = 27.0
+
+[node name="RAmmo" type="TextureProgressBar" parent="Ammo/Ammo/Text"]
+self_modulate = Color(0.992157, 0.772549, 0.262745, 1)
+layout_mode = 2
+value = 100.0
+fill_mode = 1
+texture_progress = ExtResource("6_0d1m2")
+
+[node name="LAmmo" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="RAmmo" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="LAmmo" to="." method="_on_l_ammo_timeout"]
+[connection signal="timeout" from="RAmmo" to="." method="_on_r_ammo_timeout"]

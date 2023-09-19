@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c35028660riv0"]
+
+[ext_resource type="Script" path="res://Script/Entity/Player/Arch/Hook/hook.gd" id="1_04k4j"]
+[ext_resource type="PackedScene" uid="uid://dtibhfwx5ajqi" path="res://Script/Entity/Player/Arch/Hook/hook_end.tscn" id="2_3lhd3"]
+
+[node name="hook" type="Node2D"]
+script = ExtResource("1_04k4j")
+
+[node name="hook_start" parent="." instance=ExtResource("2_3lhd3")]
+
+[node name="hook_end" parent="." instance=ExtResource("2_3lhd3")]

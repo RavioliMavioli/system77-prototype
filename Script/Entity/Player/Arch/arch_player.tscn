@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://cb7xql0s1of1f"]
+
+[ext_resource type="Texture2D" uid="uid://comlbx3kyujnk" path="res://Resources/ravimo/light.png" id="1_75gd7"]
+[ext_resource type="PackedScene" uid="uid://ctqf11ltd33hw" path="res://Script/Entity/Player/basic_player.tscn" id="1_g1e1o"]
+[ext_resource type="Script" path="res://Script/Entity/Player/Arch/arch_player.gd" id="2_kid5w"]
+[ext_resource type="PackedScene" uid="uid://dna5py5tdf5l5" path="res://Script/Entity/Player/Arch/Hook2/hook2.tscn" id="3_u8cv4"]
+[ext_resource type="PackedScene" uid="uid://82h38bq7klse" path="res://Script/Entity/Player/Arch/arch_sprite.tscn" id="4_uj5gi"]
+[ext_resource type="PackedScene" uid="uid://h83vyu17nut6" path="res://Script/Cursor/cursor.tscn" id="5_favmm"]
+[ext_resource type="AudioStream" uid="uid://b2j5bqhm1mlme" path="res://Resources/SFX/Shapeforms Audio Free Sound Effects/Future UI Preview/Audio/Telemetry Ticker Loop-2.wav" id="6_anbvh"]
+[ext_resource type="AudioStream" uid="uid://tjwbp5v1tlqt" path="res://Resources/SFX/Shapeforms Audio Free Sound Effects/Sci Fi Weapons Cyberpunk Arsenal Preview/AUDIO/GUNMech_Scope Deactivate_11.wav" id="7_jjqfs"]
+[ext_resource type="AudioStream" uid="uid://ylu6xjlufikr" path="res://Resources/SFX/Shapeforms Audio Free Sound Effects/Sci Fi Weapons Cyberpunk Arsenal Preview/AUDIO/LASRGun_Plasma Rifle Fire_03.wav" id="8_kl3tt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pgvjk"]
+radius = 49.0102
+
+[node name="arch_player" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_g1e1o")]
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+script = ExtResource("2_kid5w")
+HOOK_MAX_LENGTH = 500.0
+HOOK_VELOCITY = 30.0
+HOOK_PULL = 20.0
+RMB_BULLET_AMMOUNT_PER_TARGET = 12
+JUMP_VELOCITY = 250.0
+
+[node name="PointLight2D" type="PointLight2D" parent="Player"]
+position = Vector2(0, 5)
+energy = 0.4
+range_z_min = -1
+range_z_max = 2
+range_layer_max = 1
+shadow_enabled = true
+texture = ExtResource("1_75gd7")
+texture_scale = 4.0
+
+[node name="hook2" parent="Player" instance=ExtResource("3_u8cv4")]
+
+[node name="HookAim" type="Node2D" parent="Player"]
+position = Vector2(0, 5)
+
+[node name="HookDestination" type="Marker2D" parent="Player/HookAim"]
+position = Vector2(29, 0)
+
+[node name="arch" parent="Player" instance=ExtResource("4_uj5gi")]
+z_index = 2
+position = Vector2(0, 6)
+
+[node name="RMBShoot" type="Timer" parent="Player"]
+wait_time = 0.02
+
+[node name="SFXRMB1" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("6_anbvh")
+
+[node name="SFXRMB2" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("7_jjqfs")
+volume_db = -10.0
+
+[node name="SFXSpecial" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("8_kl3tt")
+volume_db = -6.0
+
+[node name="Cursor" parent="." instance=ExtResource("5_favmm")]
+top_level = true
+
+[node name="Scan" type="Area2D" parent="Cursor"]
+collision_layer = 0
+collision_mask = 8
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor/Scan"]
+shape = SubResource("CircleShape2D_pgvjk")
+
+[connection signal="timeout" from="Player/RMBShoot" to="Player" method="_on_rmb_shoot_timeout"]
+[connection signal="body_entered" from="Cursor/Scan" to="Player" method="_on_scan_body_entered"]

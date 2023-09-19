@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0dwsgcbt756t"]
+
+[ext_resource type="Script" path="res://Script/Bullet/bullet_case.gd" id="1_aiwww"]
+[ext_resource type="Texture2D" uid="uid://ccjjrfjbeah8i" path="res://Resources/ravimo/case.png" id="2_ud2wk"]
+[ext_resource type="AudioStream" uid="uid://cvgu7l8i7truf" path="res://Resources/ravimo/bulletcase.mp3" id="3_qr3kn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tta18"]
+size = Vector2(1.81819, 0.909091)
+
+[node name="BulletCase" type="RigidBody2D"]
+position = Vector2(-7.62939e-06, 0)
+scale = Vector2(2.2, 2.2)
+collision_layer = 256
+max_contacts_reported = 1
+contact_monitor = true
+linear_damp = 1.0
+angular_velocity = -1.0
+script = ExtResource("1_aiwww")
+
+[node name="Case" type="Sprite2D" parent="."]
+position = Vector2(3.45707e-06, 0)
+scale = Vector2(0.227273, 0.227273)
+texture = ExtResource("2_ud2wk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.30046e-06, -4.33488e-07)
+shape = SubResource("RectangleShape2D_tta18")
+
+[node name="DeleteCase" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qr3kn")
+volume_db = -10.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="DeleteCase" to="." method="_on_delete_case_timeout"]

@@ -1,0 +1,26 @@
+Future UI (working title) is an upcoming library of 695 futuristic UI inspired sound effects covering a range of categories:
+
+- Activate Deactivate
+- Alerts Pings
+- Ambience and Loops
+- Clicks and Buttons
+- Data and Telemetry
+- Energy and Motion
+- Errors and Alarms
+- Holographic Chimes
+- Holographic Interaction
+- Mechanisms
+- Menu Navigation
+- Noise and Glitch
+- Old Terminal
+- Open Close
+- Scanners
+
+Format: 16-bit/44kHz wav (full library will be available in both 16/44 and high-quality 24/48)
+
+This free pack is a sampler of 15 of the 695 sounds – you're welcome to use the sounds in both non-commercial and commercial projects. Please see the license agreement in the folder above for more information.
+
+Visit shapeforms.com and sign up for the newsletter for a discount when it launches!
+Also available for preorder as part of the Complete Collection 2021.
+
+Have fun with the sounds!

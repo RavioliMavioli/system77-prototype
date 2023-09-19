@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ln4g3mtv2a8f"
+path="res://.godot/imported/MOTRSrvo_Plasma Rifle Arm_01.wav-8ac9bf6f597df2790894ce8e253d93b6.sample"
+
+[deps]
+
+source_file="res://Resources/SFX/Shapeforms Audio Free Sound Effects/Sci Fi Weapons Cyberpunk Arsenal Preview/AUDIO/MOTRSrvo_Plasma Rifle Arm_01.wav"
+dest_files=["res://.godot/imported/MOTRSrvo_Plasma Rifle Arm_01.wav-8ac9bf6f597df2790894ce8e253d93b6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

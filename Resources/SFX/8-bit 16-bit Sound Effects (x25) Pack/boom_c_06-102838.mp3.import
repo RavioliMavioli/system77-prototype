@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cx8cygt2cfyy8"
+path="res://.godot/imported/boom_c_06-102838.mp3-b92d7502bffee3eb8cab695937506844.mp3str"
+
+[deps]
+
+source_file="res://Resources/SFX/8-bit 16-bit Sound Effects (x25) Pack/boom_c_06-102838.mp3"
+dest_files=["res://.godot/imported/boom_c_06-102838.mp3-b92d7502bffee3eb8cab695937506844.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://du86wx8tbi8dt"
+path="res://.godot/imported/Blow 2.wav-7fe48351762ef80611e27f07537bca77.sample"
+
+[deps]
+
+source_file="res://Resources/SFX/8-bit 16-bit Sound Effects (x25) Pack/Blow 2.wav"
+dest_files=["res://.godot/imported/Blow 2.wav-7fe48351762ef80611e27f07537bca77.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

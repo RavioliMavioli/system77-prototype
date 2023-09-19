@@ -1,0 +1,8 @@
+res://Scene/Level 1/level1.gd
+res://Shader/blur.gdshader
+res://Scene/Start Screen/chromatic_aberration.gdshader
+res://Script/UI/ui.tres
+res://Label/urbanist_bold.tres
+res://Theme/theme.tres
+res://Shader/vignette.gdshader
+res://Script/Entity/Player/Arch/white.gdshader

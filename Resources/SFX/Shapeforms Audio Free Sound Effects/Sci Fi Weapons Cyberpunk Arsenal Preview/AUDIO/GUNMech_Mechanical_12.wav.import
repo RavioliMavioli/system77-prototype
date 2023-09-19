@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dsxjg3sa1m8m6"
+path="res://.godot/imported/GUNMech_Mechanical_12.wav-6f6c042802a14019be781235dc560471.sample"
+
+[deps]
+
+source_file="res://Resources/SFX/Shapeforms Audio Free Sound Effects/Sci Fi Weapons Cyberpunk Arsenal Preview/AUDIO/GUNMech_Mechanical_12.wav"
+dest_files=["res://.godot/imported/GUNMech_Mechanical_12.wav-6f6c042802a14019be781235dc560471.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,88 @@
+[gd_resource type="Theme" load_steps=21 format=3 uid="uid://30g5tad2j2bt"]
+
+[ext_resource type="Texture2D" uid="uid://mspgj7666fiq" path="res://Resources/Main Menu/check.png" id="1_dt0la"]
+[ext_resource type="Texture2D" uid="uid://c75nkdk65e0pa" path="res://Resources/Main Menu/uncheck.png" id="2_wrto1"]
+[ext_resource type="FontFile" uid="uid://086i0ex67oew" path="res://Fonts/Urbanist-fonts/Urbanist-Italic.ttf" id="3_xtvk8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6a0y0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2c7o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jlow"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1mkvj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m82c3"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fv4l3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d3xab"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1kefb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2x13e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uacl4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_urjs8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yj4g7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vdw7s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r7opx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bxqby"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vc1b0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ecd5"]
+
+[resource]
+default_font = ExtResource("3_xtvk8")
+default_font_size = 15
+Button/colors/font_color = Color(1, 1, 2, 1)
+Button/colors/font_disabled_color = Color(0.501961, 0.501961, 0.501961, 0.501961)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 0)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 16
+Button/styles/disabled = SubResource("StyleBoxEmpty_6a0y0")
+Button/styles/focus = SubResource("StyleBoxEmpty_r2c7o")
+Button/styles/hover = SubResource("StyleBoxFlat_2jlow")
+Button/styles/normal = SubResource("StyleBoxEmpty_1mkvj")
+Button/styles/pressed = SubResource("StyleBoxFlat_m82c3")
+CheckBox/colors/font_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+CheckBox/colors/font_focus_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_hover_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_outline_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_pressed_color = Color(1, 1, 1, 1)
+CheckBox/icons/checked = ExtResource("1_dt0la")
+CheckBox/icons/checked_disabled = ExtResource("1_dt0la")
+CheckBox/styles/disabled = SubResource("StyleBoxEmpty_fv4l3")
+CheckBox/styles/focus = SubResource("StyleBoxEmpty_d3xab")
+CheckBox/styles/hover = SubResource("StyleBoxEmpty_1kefb")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxEmpty_2x13e")
+CheckBox/styles/normal = SubResource("StyleBoxEmpty_uacl4")
+CheckBox/styles/pressed = SubResource("StyleBoxEmpty_urjs8")
+CheckButton/colors/font_color = Color(1, 1, 1, 1)
+CheckButton/colors/font_disabled_color = Color(1, 1, 1, 0)
+CheckButton/colors/font_focus_color = Color(1, 1, 1, 1)
+CheckButton/colors/font_hover_color = Color(1, 1, 1, 0.686275)
+CheckButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+CheckButton/colors/font_outline_color = Color(1, 1, 1, 1)
+CheckButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+CheckButton/icons/checked = ExtResource("1_dt0la")
+CheckButton/icons/unchecked = ExtResource("2_wrto1")
+CheckButton/styles/disabled = SubResource("StyleBoxEmpty_yj4g7")
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_vdw7s")
+CheckButton/styles/hover = SubResource("StyleBoxEmpty_r7opx")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_bxqby")
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_vc1b0")
+CheckButton/styles/pressed = SubResource("StyleBoxEmpty_1ecd5")

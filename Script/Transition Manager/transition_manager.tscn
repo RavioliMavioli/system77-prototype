@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dybx81s15loja"]
+
+[node name="transition_manager" type="CanvasLayer"]

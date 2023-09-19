@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://jv574kd122l1"]
+
+[ext_resource type="Script" path="res://Script/Entity/Player/Arch/Hook/hook_tip.gd" id="1_1puwu"]
+[ext_resource type="Texture2D" uid="uid://d1h7abrwpnunq" path="res://Resources/icon.svg" id="1_ntmsa"]
+
+[node name="hook_tip" type="RigidBody2D"]
+collision_layer = 0
+mass = 0.01
+script = ExtResource("1_1puwu")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.09375, 0.09375)
+texture = ExtResource("1_ntmsa")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

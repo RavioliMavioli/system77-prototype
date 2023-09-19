@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://4tsx1l6o8tgw"]
+
+[ext_resource type="AudioStream" uid="uid://bur2cghbc7y4g" path="res://Resources/ravimo/se_plst00.wav" id="1_84i81"]
+[ext_resource type="Script" path="res://Script/Bullet/Test/test_gun_sfx1.gd" id="2_sa0uh"]
+
+[node name="test_gun_sfx1" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_84i81")
+autoplay = true
+script = ExtResource("2_sa0uh")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

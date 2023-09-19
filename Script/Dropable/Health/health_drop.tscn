@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dj8dsk6sidmo2"]
+
+[ext_resource type="PackedScene" uid="uid://dvmijn00tsu2i" path="res://Script/Dropable/basic_dropable.tscn" id="1_yruyr"]
+[ext_resource type="Script" path="res://Script/Dropable/Health/health_drop.gd" id="2_yqwrm"]
+[ext_resource type="AudioStream" uid="uid://dufwfbpkfohcf" path="res://Resources/SFX/Pixabay/pickup2.wav" id="4_rsmrp"]
+[ext_resource type="Texture2D" uid="uid://dxos3wec8k4h7" path="res://Resources/Dropable/health.png" id="4_s4hs0"]
+
+[node name="health_drop" type="Node2D"]
+
+[node name="Dropable" parent="." instance=ExtResource("1_yruyr")]
+script = ExtResource("2_yqwrm")
+
+[node name="Health" type="Sprite2D" parent="Dropable"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_s4hs0")
+
+[node name="SFXPick" type="AudioStreamPlayer2D" parent="Dropable"]
+stream = ExtResource("4_rsmrp")
+volume_db = -6.0

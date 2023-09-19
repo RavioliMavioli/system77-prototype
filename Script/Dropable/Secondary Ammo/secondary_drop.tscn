@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://td80b8a0bmax"]
+
+[ext_resource type="PackedScene" uid="uid://dvmijn00tsu2i" path="res://Script/Dropable/basic_dropable.tscn" id="1_fxjv6"]
+[ext_resource type="Script" path="res://Script/Dropable/Secondary Ammo/secondary_ammo.gd" id="2_he6qy"]
+[ext_resource type="Texture2D" uid="uid://b8xuwmwd6vnyh" path="res://Resources/Dropable/special.png" id="4_7prr8"]
+[ext_resource type="AudioStream" uid="uid://cb2eubcun8rf1" path="res://Resources/SFX/Pixabay/pickup1.wav" id="4_u2ugc"]
+
+[node name="secondary_drop" type="Node2D"]
+
+[node name="Dropable" parent="." instance=ExtResource("1_fxjv6")]
+script = ExtResource("2_he6qy")
+
+[node name="Special" type="Sprite2D" parent="Dropable"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_7prr8")
+
+[node name="SFXPick" type="AudioStreamPlayer2D" parent="Dropable"]
+stream = ExtResource("4_u2ugc")
+volume_db = -6.0

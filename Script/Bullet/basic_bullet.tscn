@@ -1,0 +1,100 @@
+[gd_scene load_steps=15 format=3 uid="uid://nxsfqq51y27j"]
+
+[ext_resource type="Script" path="res://Script/Bullet/basic_bullet.gd" id="1_qd6eu"]
+[ext_resource type="Texture2D" uid="uid://es1xqx6qlbyn" path="res://Resources/ravimo/light.png" id="2_iok0c"]
+[ext_resource type="Texture2D" uid="uid://dlh7xbyqdrifm" path="res://Resources/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-2.png" id="3_pqwko"]
+[ext_resource type="Texture2D" uid="uid://c7hmlex8rfn1q" path="res://Resources/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-3.png" id="4_nastb"]
+[ext_resource type="Texture2D" uid="uid://df78kmn3dngsa" path="res://Resources/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-4.png" id="5_dgaxr"]
+[ext_resource type="Texture2D" uid="uid://bbwu871e0b54b" path="res://Resources/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-5.png" id="6_ph405"]
+[ext_resource type="Texture2D" uid="uid://dm1benbd67clv" path="res://Resources/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-6.png" id="7_vd5e6"]
+[ext_resource type="Texture2D" uid="uid://5il2divi8vcn" path="res://Resources/ravimo/Projectiles/Bullet1.png" id="8_y0u5k"]
+[ext_resource type="AudioStream" uid="uid://bmgb4wcm3yfgm" path="res://Resources/SFX/200 Free SFX/GameSFX/Weapon/Retro Gun SingleShot 04.wav" id="9_7pfv3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0hor"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pqwko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nastb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dgaxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ph405")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vd5e6")
+}],
+"loop": false,
+"name": &"boom",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4s8ua"]
+size = Vector2(8, 2)
+
+[sub_resource type="Gradient" id="Gradient_bsarb"]
+offsets = PackedFloat32Array(0, 0.581673, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mehvi"]
+gradient = SubResource("Gradient_bsarb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vaqq5"]
+lifetime_randomness = 0.43
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_max = 150.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -720.0
+angle_max = 720.0
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_mehvi")
+collision_mode = 1
+collision_friction = 0.1
+collision_bounce = 0.4
+
+[node name="PlayerBullet" type="Sprite2D"]
+script = ExtResource("1_qd6eu")
+DAMAGE = 30
+SPEED = 2000
+LIFETIME = 1.5
+
+[node name="Bloom" type="PointLight2D" parent="."]
+color = Color(0.94902, 0.909804, 0.74902, 1)
+shadow_enabled = true
+texture = ExtResource("2_iok0c")
+
+[node name="Boom" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_d0hor")
+animation = &"boom"
+speed_scale = 5.0
+
+[node name="Bullet" type="Sprite2D" parent="."]
+texture = ExtResource("8_y0u5k")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4s8ua")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_7pfv3")
+volume_db = -6.647
+
+[node name="Particles" type="GPUParticles2D" parent="."]
+rotation = 3.14159
+emitting = false
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_vaqq5")
+lifetime = 5.0
+one_shot = true
+speed_scale = 3.0
+explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 0.03

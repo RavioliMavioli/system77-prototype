@@ -1,0 +1,117 @@
+[gd_scene load_steps=14 format=3 uid="uid://c0abm5hgtlcx8"]
+
+[ext_resource type="PackedScene" uid="uid://cpq5tuqltaf6h" path="res://Script/Entity/Enemy/basic_enemy.tscn" id="1_gi30a"]
+[ext_resource type="Script" path="res://Script/Entity/Enemy/Enemy 1/enemy1.gd" id="2_f1rim"]
+[ext_resource type="Texture2D" uid="uid://di3xv2ehwkkj6" path="res://Resources/icon.svg" id="2_p2v8w"]
+[ext_resource type="Texture2D" uid="uid://duy4xvj2uow4e" path="res://Resources/Enemy/Robotic Drone Sprite Sheet.png" id="4_snkjj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bawrw"]
+atlas = ExtResource("4_snkjj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bci6s"]
+atlas = ExtResource("4_snkjj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipyc7"]
+atlas = ExtResource("4_snkjj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk0hy"]
+atlas = ExtResource("4_snkjj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxj7x"]
+atlas = ExtResource("4_snkjj")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sf68i"]
+atlas = ExtResource("4_snkjj")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uh51"]
+atlas = ExtResource("4_snkjj")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvocg"]
+atlas = ExtResource("4_snkjj")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1f0hn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_p2v8w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bawrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bci6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipyc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nk0hy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxj7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sf68i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uh51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvocg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="enemy1" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_gi30a")]
+script = ExtResource("2_f1rim")
+KNOCKBACK_FACTOR = 0
+HEALTH = 100.0
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Enemy"]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_1f0hn")
+animation = &"idle"
+frame = 1
+frame_progress = 0.120879
+
+[node name="GroundLonger" type="RayCast2D" parent="Enemy"]
+target_position = Vector2(0, 188)
+collision_mask = 5
+hit_from_inside = true
+
+[node name="Front" type="RayCast2D" parent="Enemy"]
+position = Vector2(16, 0)
+target_position = Vector2(32, 0)
+collision_mask = 5
+hit_from_inside = true
+
+[node name="Back" type="RayCast2D" parent="Enemy"]
+position = Vector2(-16, 0)
+target_position = Vector2(-32, 0)
+collision_mask = 5
+hit_from_inside = true
+
+[node name="JumpPlayer" type="Timer" parent="Enemy"]
+wait_time = 2.0
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="Enemy"]
+
+[connection signal="timeout" from="Enemy/JumpPlayer" to="Enemy" method="_on_jump_player_timeout"]

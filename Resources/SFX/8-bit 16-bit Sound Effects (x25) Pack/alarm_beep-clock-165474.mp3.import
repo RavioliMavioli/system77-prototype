@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8ll84cfp2a14"
+path="res://.godot/imported/alarm_beep-clock-165474.mp3-77bc8b842db064a242866bd701e247e9.mp3str"
+
+[deps]
+
+source_file="res://Resources/SFX/8-bit 16-bit Sound Effects (x25) Pack/alarm_beep-clock-165474.mp3"
+dest_files=["res://.godot/imported/alarm_beep-clock-165474.mp3-77bc8b842db064a242866bd701e247e9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cmp6nn4t8ok2f"
+path="res://.godot/imported/GUNAuto_Assault Rifle D Burst_05.wav-313a6d850f5ece956f52ce9a7ce3ecc2.sample"
+
+[deps]
+
+source_file="res://Resources/SFX/Shapeforms Audio Free Sound Effects/Sci Fi Weapons Cyberpunk Arsenal Preview/AUDIO/GUNAuto_Assault Rifle D Burst_05.wav"
+dest_files=["res://.godot/imported/GUNAuto_Assault Rifle D Burst_05.wav-313a6d850f5ece956f52ce9a7ce3ecc2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

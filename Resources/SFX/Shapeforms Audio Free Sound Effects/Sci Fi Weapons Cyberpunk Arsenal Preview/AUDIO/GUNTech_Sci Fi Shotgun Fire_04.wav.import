@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://7fc204jfrjn6"
+path="res://.godot/imported/GUNTech_Sci Fi Shotgun Fire_04.wav-dc58bdf653685b904c50cc2c61e5671b.sample"
+
+[deps]
+
+source_file="res://Resources/SFX/Shapeforms Audio Free Sound Effects/Sci Fi Weapons Cyberpunk Arsenal Preview/AUDIO/GUNTech_Sci Fi Shotgun Fire_04.wav"
+dest_files=["res://.godot/imported/GUNTech_Sci Fi Shotgun Fire_04.wav-dc58bdf653685b904c50cc2c61e5671b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

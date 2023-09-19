@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/tiles.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 16 )
+
+[node name="Tiles" type="Node2D"]
+
+[node name="Top" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Top"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Bot" type="Sprite" parent="."]
+position = Vector2( 69.4229, 7.10007 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bot"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bot/StaticBody2D"]
+shape = SubResource( 2 )

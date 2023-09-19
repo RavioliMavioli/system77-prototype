@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6iolfbv3novi"]
+
+[ext_resource type="PackedScene" uid="uid://cb7xql0s1of1f" path="res://Script/Entity/Player/Arch/arch_player.tscn" id="1_2tliv"]
+[ext_resource type="Theme" uid="uid://b6ghro2b3hnjk" path="res://Theme/theme.tres" id="2_0yxmq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnivr"]
+size = Vector2(1568, 34)
+
+[node name="asdasd" type="Node2D"]
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2(464, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(296, 7)
+shape = SubResource("RectangleShape2D_rnivr")
+
+[node name="MainPlayer" parent="." instance=ExtResource("1_2tliv")]
+position = Vector2(536, 440)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 536.0
+offset_top = 192.0
+offset_right = 690.0
+offset_bottom = 226.0
+theme = ExtResource("2_0yxmq")
+text = "ASDSdaSDS"
+
+[node name="Camera2D" type="Camera2D" parent="."]

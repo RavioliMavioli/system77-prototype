@@ -1,0 +1,678 @@
+[gd_scene load_steps=34 format=3 uid="uid://cs5fhduqgpufr"]
+
+[ext_resource type="Script" path="res://Scene/Menu/main_menu.gd" id="1_uax44"]
+[ext_resource type="PackedScene" uid="uid://b0npyif713g02" path="res://Scene/Menu/BG.tscn" id="2_3dojj"]
+[ext_resource type="FontFile" uid="uid://cyx8h3mqsice6" path="res://Fonts/Urbanist-fonts/Urbanist-Light.ttf" id="3_2csp1"]
+[ext_resource type="FontFile" uid="uid://88f8so6oa3or" path="res://Fonts/Urbanist-fonts/Urbanist-Black.ttf" id="3_bhtaj"]
+[ext_resource type="Theme" uid="uid://b6ghro2b3hnjk" path="res://Theme/theme.tres" id="3_dua8b"]
+[ext_resource type="PackedScene" uid="uid://ccuxe7spivfka" path="res://Scene/Start Screen/start_screen.tscn" id="3_uw5ej"]
+[ext_resource type="FontFile" uid="uid://bq5m6ur305wen" path="res://Fonts/Urbanist-fonts/Urbanist-Bold.ttf" id="4_pfj47"]
+[ext_resource type="Shader" path="res://Scene/Start Screen/chromatic_aberration.gdshader" id="5_3qhtj"]
+[ext_resource type="Texture2D" uid="uid://di3xv2ehwkkj6" path="res://Resources/icon.svg" id="6_w7eql"]
+[ext_resource type="Shader" path="res://Shader/blur.gdshader" id="7_ih56l"]
+[ext_resource type="FontFile" uid="uid://cno3wcun2iakl" path="res://Fonts/Urbanist-fonts/Urbanist-Regular.ttf" id="9_l2lax"]
+[ext_resource type="Script" path="res://Script/chromatic_aberration.gd" id="10_xuvpq"]
+[ext_resource type="LabelSettings" uid="uid://ca4kaifmlb6qi" path="res://Label/urbanist_bold.tres" id="11_xw41e"]
+[ext_resource type="PackedScene" uid="uid://bmy8mjos3yuo8" path="res://Script/Fps/fps.tscn" id="13_tnw0w"]
+[ext_resource type="AudioStream" uid="uid://bnvrkna3c4s2a" path="res://Resources/SFX/Pixabay/enter1.mp3" id="14_wwqp3"]
+[ext_resource type="AudioStream" uid="uid://h5o6ic6el1qc" path="res://Resources/SFX/Pixabay/enter3.mp3" id="15_s174d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f5ill"]
+shader = ExtResource("5_3qhtj")
+shader_parameter/strength_x = 2.0
+shader_parameter/strength_y = 2.0
+
+[sub_resource type="Environment" id="Environment_0vfvf"]
+background_mode = 3
+glow_enabled = true
+glow_blend_mode = 1
+glow_hdr_threshold = 0.7
+
+[sub_resource type="Animation" id="Animation_rekgx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Loading2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MenuText:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(20, 20, 20, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("QuitConfirm:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("QuitConfirm:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Loading2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BGSFX:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_spntv"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MenuText:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(20, 20, 20, 1), Color(20, 20, 20, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ahqhy"]
+resource_name = "loading1"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Loading2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ympt3"]
+resource_name = "loading_continue"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Loading2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Loading2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BGSFX:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -30.0]
+}
+
+[sub_resource type="Animation" id="Animation_6aifb"]
+resource_name = "loading_new_game"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Loading2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Loading2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BGSFX:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -30.0]
+}
+
+[sub_resource type="Animation" id="Animation_86rvr"]
+resource_name = "quit_confirm"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QuitConfirm:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QuitConfirm:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iseg4"]
+_data = {
+"RESET": SubResource("Animation_rekgx"),
+"fade": SubResource("Animation_spntv"),
+"loading1": SubResource("Animation_ahqhy"),
+"loading_continue": SubResource("Animation_ympt3"),
+"loading_new_game": SubResource("Animation_6aifb"),
+"quit_confirm": SubResource("Animation_86rvr")
+}
+
+[sub_resource type="Animation" id="Animation_oonbk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../DashI:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_63bnp"]
+resource_name = "dash"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../DashI:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5xrb1"]
+_data = {
+"RESET": SubResource("Animation_oonbk"),
+"dash": SubResource("Animation_63bnp")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_aapib"]
+font = ExtResource("3_bhtaj")
+font_size = 72
+
+[sub_resource type="LabelSettings" id="LabelSettings_ywcl0"]
+line_spacing = 0.0
+font = ExtResource("4_pfj47")
+font_size = 28
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bs4ev"]
+line_spacing = 0.0
+font = ExtResource("9_l2lax")
+font_size = 20
+font_color = Color(0.596078, 0.596078, 0.596078, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aoesc"]
+shader = ExtResource("7_ih56l")
+shader_parameter/blur = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_oeylq"]
+font = ExtResource("3_2csp1")
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_uax44")
+
+[node name="Chromatic" type="ColorRect" parent="."]
+top_level = true
+material = SubResource("ShaderMaterial_f5ill")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(640, 360)
+mouse_filter = 2
+script = ExtResource("10_xuvpq")
+
+[node name="Bloom" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0vfvf")
+
+[node name="CenterPoint" type="Marker2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_iseg4")
+}
+
+[node name="BG" parent="." instance=ExtResource("2_3dojj")]
+
+[node name="Timer2" type="Timer" parent="BG"]
+
+[node name="MenuText" type="Node2D" parent="."]
+modulate = Color(20, 20, 20, 1)
+
+[node name="Title" type="Node2D" parent="MenuText"]
+
+[node name="DashAnimation" type="AnimationPlayer" parent="MenuText/Title"]
+root_node = NodePath("../Title")
+libraries = {
+"": SubResource("AnimationLibrary_5xrb1")
+}
+
+[node name="Title" type="Label" parent="MenuText/Title"]
+offset_left = 160.0
+offset_top = 56.0
+offset_right = 606.0
+offset_bottom = 179.0
+text = "System77"
+label_settings = SubResource("LabelSettings_aapib")
+
+[node name="DashI" type="ColorRect" parent="MenuText/Title"]
+offset_left = 488.0
+offset_top = 70.0
+offset_right = 528.0
+offset_bottom = 128.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuText"]
+offset_left = 128.0
+offset_top = 320.0
+offset_right = 512.0
+offset_bottom = 640.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuText/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("3_dua8b")
+theme_override_constants/separation = 16
+
+[node name="Continue" type="Button" parent="MenuText/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("3_dua8b")
+text = "     CONTINUE"
+alignment = 0
+
+[node name="LabelContinue" type="Node2D" parent="MenuText/MarginContainer/VBoxContainer/Continue"]
+visible = false
+
+[node name="Label" type="Label" parent="MenuText/MarginContainer/VBoxContainer/Continue/LabelContinue"]
+offset_left = 8.0
+offset_right = 48.0
+offset_bottom = 34.0
+text = ">"
+label_settings = SubResource("LabelSettings_ywcl0")
+
+[node name="NewGame" type="Button" parent="MenuText/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_dua8b")
+text = "     NEW GAME"
+alignment = 0
+
+[node name="LabelNewGame" type="Node2D" parent="MenuText/MarginContainer/VBoxContainer/NewGame"]
+visible = false
+
+[node name="Label" type="Label" parent="MenuText/MarginContainer/VBoxContainer/NewGame/LabelNewGame"]
+offset_left = 8.0
+offset_right = 48.0
+offset_bottom = 34.0
+text = ">"
+label_settings = SubResource("LabelSettings_ywcl0")
+
+[node name="Options" type="Button" parent="MenuText/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_dua8b")
+theme_override_font_sizes/font_size = 0
+text = "     OPTIONS"
+alignment = 0
+
+[node name="LabelOptions" type="Node2D" parent="MenuText/MarginContainer/VBoxContainer/Options"]
+visible = false
+
+[node name="Label" type="Label" parent="MenuText/MarginContainer/VBoxContainer/Options/LabelOptions"]
+offset_left = 8.0
+offset_right = 48.0
+offset_bottom = 34.0
+text = ">"
+label_settings = SubResource("LabelSettings_ywcl0")
+
+[node name="Credit" type="Button" parent="MenuText/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_dua8b")
+theme_override_font_sizes/font_size = 0
+text = "     CREDIT"
+alignment = 0
+
+[node name="LabelCredit" type="Node2D" parent="MenuText/MarginContainer/VBoxContainer/Credit"]
+visible = false
+
+[node name="Label" type="Label" parent="MenuText/MarginContainer/VBoxContainer/Credit/LabelCredit"]
+offset_left = 8.0
+offset_right = 48.0
+offset_bottom = 34.0
+text = ">"
+label_settings = SubResource("LabelSettings_ywcl0")
+
+[node name="Quit" type="Button" parent="MenuText/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_dua8b")
+theme_override_font_sizes/font_size = 0
+text = "     QUIT"
+alignment = 0
+
+[node name="LabelQuit" type="Node2D" parent="MenuText/MarginContainer/VBoxContainer/Quit"]
+visible = false
+
+[node name="Label" type="Label" parent="MenuText/MarginContainer/VBoxContainer/Quit/LabelQuit"]
+offset_left = 8.0
+offset_right = 48.0
+offset_bottom = 34.0
+text = ">"
+label_settings = SubResource("LabelSettings_ywcl0")
+
+[node name="NewGame" type="Node2D" parent="."]
+position = Vector2(-800, 0)
+
+[node name="Play" type="Button" parent="NewGame"]
+offset_left = 328.0
+offset_top = 568.0
+offset_right = 496.0
+offset_bottom = 616.0
+theme = ExtResource("3_dua8b")
+text = "     START     "
+
+[node name="NextCharacter" type="Button" parent="NewGame"]
+offset_left = 112.0
+offset_top = 403.0
+offset_right = 422.0
+offset_bottom = 451.0
+theme = ExtResource("3_dua8b")
+text = "     NEXT CHARACTER     "
+
+[node name="Back2" type="Button" parent="NewGame"]
+offset_left = 61.0
+offset_top = 576.0
+offset_right = 200.0
+offset_bottom = 610.0
+theme = ExtResource("3_dua8b")
+text = "     BACK     "
+
+[node name="Options" type="Node2D" parent="."]
+visible = false
+position = Vector2(-800, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="Options"]
+offset_left = 96.0
+offset_top = 192.0
+offset_right = 479.0
+offset_bottom = 512.0
+theme = ExtResource("3_dua8b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="FullScreen" type="CheckButton" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "FULLSCREEN"
+
+[node name="Vsync" type="CheckButton" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "VSYNC"
+
+[node name="CA" type="CheckButton" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "CHROMATIC ABERRATION"
+
+[node name="EnableParticle" type="CheckButton" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "ENABLE PARTICLES"
+
+[node name="ShowFPS" type="CheckButton" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SHOW FPS"
+
+[node name="VsyncWarning" type="Label" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "*Warning, disabled Vsync
+ may cause gameplay problems"
+label_settings = SubResource("LabelSettings_bs4ev")
+
+[node name="Back" type="Button" parent="Options"]
+offset_left = 61.0
+offset_top = 576.0
+offset_right = 200.0
+offset_bottom = 610.0
+theme = ExtResource("3_dua8b")
+text = "     BACK     "
+
+[node name="Credit" type="Node2D" parent="."]
+position = Vector2(-800, 0)
+
+[node name="Icon" type="Sprite2D" parent="Credit"]
+position = Vector2(232, 576)
+texture = ExtResource("6_w7eql")
+
+[node name="QuitConfirm" type="Node2D" parent="."]
+visible = false
+top_level = true
+
+[node name="ColorRect" type="ColorRect" parent="QuitConfirm"]
+material = SubResource("ShaderMaterial_aoesc")
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="MarginContainer" type="MarginContainer" parent="QuitConfirm"]
+custom_minimum_size = Vector2(58, 41)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 336.0
+offset_top = 280.0
+offset_right = 949.0
+offset_bottom = 446.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuitConfirm/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Label" type="Label" parent="QuitConfirm/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Are you sure want to quit?"
+label_settings = ExtResource("11_xw41e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hbox" type="HBoxContainer" parent="QuitConfirm/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_dua8b")
+theme_override_constants/separation = 85
+
+[node name="QuitCancel" type="Button" parent="QuitConfirm/MarginContainer/VBoxContainer/Hbox"]
+layout_mode = 2
+text = "     CANCEL     "
+
+[node name="QuitQuit" type="Button" parent="QuitConfirm/MarginContainer/VBoxContainer/Hbox"]
+layout_mode = 2
+text = "     QUIT     "
+
+[node name="Loading2" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1288.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Loading" type="Label" parent="Loading2"]
+layout_mode = 0
+offset_left = 1192.0
+offset_top = 688.0
+offset_right = 1533.0
+offset_bottom = 725.0
+text = "Loading..."
+label_settings = SubResource("LabelSettings_oeylq")
+
+[node name="StartScreen" parent="." instance=ExtResource("3_uw5ej")]
+
+[node name="BGSFX" type="AudioStreamPlayer" parent="."]
+
+[node name="BGMDelay" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="FPS" parent="." instance=ExtResource("13_tnw0w")]
+
+[node name="Hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_s174d")
+volume_db = -10.0
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_wwqp3")
+volume_db = -5.0
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="MenuText/Title/DashAnimation" to="." method="_on_dash_animation_2_animation_finished"]
+[connection signal="mouse_entered" from="MenuText/MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_mouse_entered"]
+[connection signal="mouse_exited" from="MenuText/MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_mouse_exited"]
+[connection signal="pressed" from="MenuText/MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="mouse_entered" from="MenuText/MarginContainer/VBoxContainer/NewGame" to="." method="_on_new_game_mouse_entered"]
+[connection signal="mouse_exited" from="MenuText/MarginContainer/VBoxContainer/NewGame" to="." method="_on_new_game_mouse_exited"]
+[connection signal="pressed" from="MenuText/MarginContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="mouse_entered" from="MenuText/MarginContainer/VBoxContainer/Options" to="." method="_on_options_mouse_entered"]
+[connection signal="mouse_exited" from="MenuText/MarginContainer/VBoxContainer/Options" to="." method="_on_options_mouse_exited"]
+[connection signal="pressed" from="MenuText/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="MenuText/MarginContainer/VBoxContainer/Credit" to="." method="_on_credit_mouse_entered"]
+[connection signal="mouse_exited" from="MenuText/MarginContainer/VBoxContainer/Credit" to="." method="_on_credit_mouse_exited"]
+[connection signal="pressed" from="MenuText/MarginContainer/VBoxContainer/Credit" to="." method="_on_credit_pressed"]
+[connection signal="mouse_entered" from="MenuText/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="MenuText/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="MenuText/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="NewGame/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="pressed" from="NewGame/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="NewGame/NextCharacter" to="." method="_on_next_character_mouse_entered"]
+[connection signal="pressed" from="NewGame/NextCharacter" to="." method="_on_next_character_pressed"]
+[connection signal="mouse_entered" from="NewGame/Back2" to="." method="_on_back_2_mouse_entered"]
+[connection signal="pressed" from="NewGame/Back2" to="." method="_on_back_2_pressed"]
+[connection signal="toggled" from="Options/MarginContainer/VBoxContainer/FullScreen" to="." method="_on_full_screen_toggled"]
+[connection signal="toggled" from="Options/MarginContainer/VBoxContainer/Vsync" to="." method="_on_vsync_toggled"]
+[connection signal="toggled" from="Options/MarginContainer/VBoxContainer/CA" to="." method="_on_ca_toggled"]
+[connection signal="toggled" from="Options/MarginContainer/VBoxContainer/EnableParticle" to="." method="_on_enable_particle_toggled"]
+[connection signal="toggled" from="Options/MarginContainer/VBoxContainer/ShowFPS" to="." method="_on_show_fps_toggled"]
+[connection signal="mouse_entered" from="Options/Back" to="." method="_on_back_mouse_entered"]
+[connection signal="pressed" from="Options/Back" to="." method="_on_back_pressed"]
+[connection signal="mouse_entered" from="QuitConfirm/MarginContainer/VBoxContainer/Hbox/QuitCancel" to="." method="_on_quit_cancel_mouse_entered"]
+[connection signal="pressed" from="QuitConfirm/MarginContainer/VBoxContainer/Hbox/QuitCancel" to="." method="_on_quit_cancel_pressed"]
+[connection signal="mouse_entered" from="QuitConfirm/MarginContainer/VBoxContainer/Hbox/QuitQuit" to="." method="_on_quit_quit_mouse_entered"]
+[connection signal="pressed" from="QuitConfirm/MarginContainer/VBoxContainer/Hbox/QuitQuit" to="." method="_on_quit_quit_pressed"]
+[connection signal="finished" from="BGSFX" to="." method="_on_bgsfx_finished"]
+[connection signal="timeout" from="BGMDelay" to="." method="_on_bgm_delay_timeout"]

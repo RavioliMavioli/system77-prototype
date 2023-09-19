@@ -1,0 +1,628 @@
+[gd_scene load_steps=21 format=3 uid="uid://chcxdtanyqdtp"]
+
+[ext_resource type="Script" path="res://Scene/Start Screen/bootsplash.gd" id="1_ivlbo"]
+[ext_resource type="FontFile" uid="uid://bq5m6ur305wen" path="res://Fonts/Urbanist-fonts/Urbanist-Bold.ttf" id="3_ijcop"]
+[ext_resource type="Script" path="res://Script/chromatic_aberration.gd" id="3_nrv6x"]
+[ext_resource type="Shader" path="res://Shader/vignette.gdshader" id="4_65ggt"]
+[ext_resource type="Texture2D" uid="uid://ymuq0e058oeq" path="res://Resources/Start Screen/godot_down.svg" id="5_o7hic"]
+[ext_resource type="Texture2D" uid="uid://hdh3xx3glnpn" path="res://Resources/Start Screen/g21.svg" id="6_mvh6o"]
+[ext_resource type="Texture2D" uid="uid://c647dg68qk55h" path="res://Resources/Start Screen/godot_up.svg" id="7_oqmsh"]
+[ext_resource type="Texture2D" uid="uid://d0b64y8a81v4h" path="res://Resources/Start Screen/godot.svg" id="8_t3prq"]
+[ext_resource type="FontFile" uid="uid://cyx8h3mqsice6" path="res://Fonts/Urbanist-fonts/Urbanist-Light.ttf" id="9_oa6bd"]
+[ext_resource type="Shader" path="res://Scene/Start Screen/chromatic_aberration.gdshader" id="10_jhmxh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_owr07"]
+shader = ExtResource("10_jhmxh")
+shader_parameter/strength_x = 2.0
+shader_parameter/strength_y = 2.0
+
+[sub_resource type="Animation" id="Animation_roar3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Godot/GodotEngine/GodotLogo/GodotDown:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Godot/GodotEngine/GodotLogo/GodotUp:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Godot/GodotEngine/GodotLogo/GodotUp:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -192.308)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Godot/GodotEngine/GodotLogo/GodotDown:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 269.231)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Godot/GodotEngine/GodotLogo/GodotUp:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Godot/GodotEngine/GodotLogo/GodotUp/G21:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Godot/GodotEngine/GodotLogo/GodotUp/ColorRect:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Godot/GodotEngine/GodotLogo/GodotUp/ColorRect:size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(769, 262)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Godot/GodotEngine/Godot2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1476.92, 23.0769)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Godot/GodotEngine/GodotLogo:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 23.0769)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Godot/MadeWith:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-61, -158)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Godot/MadeWith:self_modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Godot:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Godot/GodotEngine/Godot2:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Loading:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Godot/GodotEngine/GodotLogo/Clip:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_y652u"]
+resource_name = "bootanim"
+length = 8.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.3, 2.3, 3.3, 4.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Godot/GodotEngine/GodotLogo/GodotDown:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4.5, 5.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Godot/GodotEngine/GodotLogo/GodotUp:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.5, 5.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Godot/GodotEngine/GodotLogo/GodotUp:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.5, 5.3),
+"transitions": PackedFloat32Array(0.307786, 1),
+"update": 0,
+"values": [Vector2(0, -400), Vector2(0, -192.308)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Godot/GodotEngine/GodotLogo/GodotDown:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(4.5, 5.3),
+"transitions": PackedFloat32Array(0.307786, 1),
+"update": 0,
+"values": [Vector2(0, 438.462), Vector2(0, 269.231)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Godot/GodotEngine/GodotLogo/GodotUp:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(5.3, 5.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Godot/GodotEngine/GodotLogo/GodotUp/G21:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3.8, 5.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Godot/GodotEngine/GodotLogo/GodotUp/ColorRect:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(3.8, 5.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Godot/GodotEngine/GodotLogo/GodotUp/ColorRect:size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(5.3, 5.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(769, 262), Vector2(769, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Godot/GodotEngine/Godot2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(5.3, 6),
+"transitions": PackedFloat32Array(0.316518, 1),
+"update": 0,
+"values": [Vector2(923.077, 0), Vector2(1476.92, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Godot/GodotEngine/GodotLogo:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(5.3, 6),
+"transitions": PackedFloat32Array(0.31864, 1),
+"update": 0,
+"values": [Vector2(800, 23.0769), Vector2(0, 23.0769)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Godot/MadeWith:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(5.3, 6),
+"transitions": PackedFloat32Array(0.31864, 1),
+"update": 0,
+"values": [Vector2(-61, -140), Vector2(-61, -156)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Godot/MadeWith:self_modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(5.3, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Godot:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(7.3, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Godot/GodotEngine/Godot2:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(5.3, 5.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Loading:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(8.2, 8.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Godot/GodotEngine/GodotLogo/Clip:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 5.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = false
+tracks/17/path = NodePath("Godot/GodotEngine/GodotLogo/Clip:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(5.3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-615, -738)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_grvq2"]
+_data = {
+"RESET": SubResource("Animation_roar3"),
+"bootanim": SubResource("Animation_y652u")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_lnriv"]
+line_spacing = 0.0
+font = ExtResource("3_ijcop")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_shpds"]
+font = ExtResource("3_ijcop")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_brt83"]
+shader = ExtResource("4_65ggt")
+shader_parameter/color = null
+shader_parameter/multipler = 0.2
+shader_parameter/softnes = 2.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_0iqij"]
+line_spacing = 0.0
+font = ExtResource("3_ijcop")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_ypage"]
+line_spacing = 0.0
+font = ExtResource("3_ijcop")
+font_size = 130
+
+[sub_resource type="LabelSettings" id="LabelSettings_nsxvx"]
+font = ExtResource("9_oa6bd")
+
+[node name="Bootsplash" type="Control"]
+texture_filter = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ivlbo")
+
+[node name="Chromatic" type="ColorRect" parent="."]
+top_level = true
+material = SubResource("ShaderMaterial_owr07")
+layout_mode = 0
+offset_left = -211.0
+offset_top = -119.0
+offset_right = 1699.0
+offset_bottom = 963.0
+scale = Vector2(0.67, 0.67)
+pivot_offset = Vector2(640, 360)
+mouse_filter = 2
+script = ExtResource("3_nrv6x")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_grvq2")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_right = 960.0
+offset_bottom = 720.0
+pivot_offset = Vector2(320, 360)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Gameby2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "RAVIMO"
+label_settings = SubResource("LabelSettings_lnriv")
+
+[node name="Node2D" type="Node2D" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+position = Vector2(2, -13)
+
+[node name="Gameby" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Node2D"]
+offset_right = 341.0
+offset_bottom = 37.0
+text = "A GAME BY"
+label_settings = SubResource("LabelSettings_shpds")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Vignette" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_brt83")
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.778475, 2.59906e-06, 0.468366, 1)
+metadata/_edit_lock_ = true
+
+[node name="Godot" type="Node2D" parent="."]
+position = Vector2(640, 380)
+
+[node name="MadeWith" type="Label" parent="Godot"]
+visible = false
+offset_left = -61.0
+offset_top = -158.0
+offset_right = 61.0
+offset_bottom = -129.0
+text = "Made with:"
+label_settings = SubResource("LabelSettings_0iqij")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GodotEngine" type="Node2D" parent="Godot"]
+position = Vector2(-104, -31)
+scale = Vector2(0.13, 0.13)
+
+[node name="Godot2" type="Sprite2D" parent="Godot/GodotEngine"]
+position = Vector2(1476.92, 23.0769)
+texture = ExtResource("8_t3prq")
+
+[node name="GameEngine" type="Label" parent="Godot/GodotEngine/Godot2"]
+offset_left = -807.692
+offset_top = 246.154
+offset_right = -21.6924
+offset_bottom = 403.154
+text = "Game engine"
+label_settings = SubResource("LabelSettings_ypage")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GodotLogo" type="Node2D" parent="Godot/GodotEngine"]
+position = Vector2(0, 23.0769)
+
+[node name="Clip" type="ColorRect" parent="Godot/GodotEngine/GodotLogo"]
+visible = false
+offset_left = -615.0
+offset_top = -738.0
+offset_right = 454.0
+offset_bottom = 615.0
+color = Color(0, 0, 0, 1)
+
+[node name="GodotDown" type="Sprite2D" parent="Godot/GodotEngine/GodotLogo"]
+position = Vector2(0, 269.231)
+texture = ExtResource("5_o7hic")
+
+[node name="GodotUp" type="Sprite2D" parent="Godot/GodotEngine/GodotLogo"]
+position = Vector2(0, -192.308)
+texture = ExtResource("6_mvh6o")
+
+[node name="ColorRect" type="ColorRect" parent="Godot/GodotEngine/GodotLogo/GodotUp"]
+visible = false
+offset_left = -369.231
+offset_top = -53.8462
+offset_right = 399.769
+offset_bottom = 208.154
+
+[node name="G21" type="Sprite2D" parent="Godot/GodotEngine/GodotLogo/GodotUp"]
+texture = ExtResource("7_oqmsh")
+
+[node name="Loading" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1192.0
+offset_top = 688.0
+offset_right = 1533.0
+offset_bottom = 725.0
+text = "Loading..."
+label_settings = SubResource("LabelSettings_nsxvx")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

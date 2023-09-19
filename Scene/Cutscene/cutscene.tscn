@@ -1,0 +1,297 @@
+[gd_scene load_steps=12 format=3 uid="uid://6imxjep4hrc5"]
+
+[ext_resource type="Texture2D" uid="uid://mspgj7666fiq" path="res://Resources/Main Menu/check.png" id="1_8jng7"]
+[ext_resource type="Script" path="res://Scene/Cutscene/cutscene.gd" id="1_y1pt5"]
+[ext_resource type="FontFile" uid="uid://cyx8h3mqsice6" path="res://Fonts/Urbanist-fonts/Urbanist-Light.ttf" id="2_2po5u"]
+[ext_resource type="Shader" path="res://Scene/Start Screen/chromatic_aberration.gdshader" id="4_bs2kq"]
+
+[sub_resource type="Animation" id="Animation_srcje"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Loading3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Loading3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Check:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, 288)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b78n7"]
+resource_name = "end"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Check:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.1, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Loading3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Loading3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3.4, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y7udc"]
+resource_name = "init"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Loading3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Loading3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gkr3e"]
+_data = {
+"RESET": SubResource("Animation_srcje"),
+"end": SubResource("Animation_b78n7"),
+"init": SubResource("Animation_y7udc")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_me80e"]
+font = ExtResource("2_2po5u")
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_d6d0c"]
+font = ExtResource("2_2po5u")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lt23q"]
+shader = ExtResource("4_bs2kq")
+shader_parameter/strength_x = 2.0
+shader_parameter/strength_y = 2.0
+
+[node name="cutscene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_y1pt5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gkr3e")
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+
+[node name="Check" type="Sprite2D" parent="Node2D"]
+position = Vector2(80, 288)
+scale = Vector2(2.66667, 2.66667)
+texture = ExtResource("1_8jng7")
+
+[node name="1" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1288.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0.0117647, 0.105882, 0.160784, 1)
+
+[node name="Loading" type="Label" parent="1"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 312.0
+offset_right = 855.0
+offset_bottom = 411.0
+text = "CUTSCENE 1"
+label_settings = SubResource("LabelSettings_me80e")
+
+[node name="2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1288.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0.145098, 0.0901961, 0.054902, 1)
+
+[node name="Loading2" type="Label" parent="2"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 312.0
+offset_right = 855.0
+offset_bottom = 411.0
+text = "CUTSCENE 2"
+label_settings = SubResource("LabelSettings_me80e")
+
+[node name="3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1288.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Loading3" type="Label" parent="3"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 312.0
+offset_right = 855.0
+offset_bottom = 411.0
+text = "CUTSCENE 3"
+label_settings = SubResource("LabelSettings_me80e")
+
+[node name="Loading3" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1288.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Loading" type="Label" parent="Loading3"]
+layout_mode = 0
+offset_left = 1192.0
+offset_top = 688.0
+offset_right = 1533.0
+offset_bottom = 725.0
+text = "Loading..."
+label_settings = SubResource("LabelSettings_d6d0c")
+
+[node name="Chromatic" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_lt23q")
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

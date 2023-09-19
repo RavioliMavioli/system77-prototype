@@ -1,0 +1,124 @@
+[gd_scene load_steps=17 format=3 uid="uid://bbt0o6o74qre5"]
+
+[ext_resource type="Script" path="res://Script/Bullet/Arch/Bullet2/arch_bullet_2.gd" id="1_eu1tl"]
+[ext_resource type="Texture2D" uid="uid://djgvpijd2brce" path="res://Resources/Sunny-land-assets-files/PNG/spritesheets/enemy-deadth.png" id="2_idk4c"]
+[ext_resource type="AudioStream" uid="uid://ylu6xjlufikr" path="res://Resources/SFX/Shapeforms Audio Free Sound Effects/Sci Fi Weapons Cyberpunk Arsenal Preview/AUDIO/LASRGun_Plasma Rifle Fire_03.wav" id="8_bag6x"]
+[ext_resource type="Texture2D" uid="uid://comlbx3kyujnk" path="res://Resources/ravimo/light.png" id="8_rrchy"]
+[ext_resource type="Texture2D" uid="uid://5il2divi8vcn" path="res://Resources/ravimo/Projectiles/Bullet1.png" id="8_x23ak"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yubrn"]
+atlas = ExtResource("2_idk4c")
+region = Rect2(0, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feo2b"]
+atlas = ExtResource("2_idk4c")
+region = Rect2(40, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yamck"]
+atlas = ExtResource("2_idk4c")
+region = Rect2(80, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_laj86"]
+atlas = ExtResource("2_idk4c")
+region = Rect2(120, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_br151"]
+atlas = ExtResource("2_idk4c")
+region = Rect2(160, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63kqs"]
+atlas = ExtResource("2_idk4c")
+region = Rect2(200, 0, 40, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aivr3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yubrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feo2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yamck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_laj86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_br151")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63kqs")
+}],
+"loop": false,
+"name": &"boom",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywobb"]
+size = Vector2(8, 2)
+
+[sub_resource type="Gradient" id="Gradient_bpqvg"]
+offsets = PackedFloat32Array(0, 0.581673, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bryam"]
+gradient = SubResource("Gradient_bpqvg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0yi8k"]
+lifetime_randomness = 0.43
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_max = 150.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -720.0
+angle_max = 720.0
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_bryam")
+collision_mode = 1
+collision_friction = 0.1
+collision_bounce = 0.4
+
+[node name="arch_bullet_2" type="Sprite2D"]
+script = ExtResource("1_eu1tl")
+DAMAGE = 30
+SPEED = 1000
+LIFETIME = 5.0
+
+[node name="Boom" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_aivr3")
+animation = &"boom"
+speed_scale = 5.0
+
+[node name="Bullet" type="Sprite2D" parent="."]
+texture = ExtResource("8_x23ak")
+
+[node name="PointLight2D" type="PointLight2D" parent="Bullet"]
+color = Color(1, 0.917647, 0.756863, 1)
+energy = 0.5
+texture = ExtResource("8_rrchy")
+texture_scale = 0.7
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ywobb")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_bag6x")
+volume_db = -18.0
+
+[node name="Particles" type="GPUParticles2D" parent="."]
+rotation = 3.14159
+emitting = false
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_0yi8k")
+lifetime = 5.0
+one_shot = true
+speed_scale = 3.0
+explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 0.03

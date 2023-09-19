@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ylu6xjlufikr"
+path="res://.godot/imported/LASRGun_Plasma Rifle Fire_03.wav-155937198bc8110bddc9196b34299ff0.sample"
+
+[deps]
+
+source_file="res://Resources/SFX/Shapeforms Audio Free Sound Effects/Sci Fi Weapons Cyberpunk Arsenal Preview/AUDIO/LASRGun_Plasma Rifle Fire_03.wav"
+dest_files=["res://.godot/imported/LASRGun_Plasma Rifle Fire_03.wav-155937198bc8110bddc9196b34299ff0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

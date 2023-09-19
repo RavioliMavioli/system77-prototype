@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvespy7kwp1d0"]
+
+[ext_resource type="Script" path="res://Script/Bullet/Arch/Bullet1/arch_bullet_1_sfx.gd" id="1_pqyg8"]
+[ext_resource type="AudioStream" uid="uid://de47e3sh14qnn" path="res://Resources/SFX/Shapeforms Audio Free Sound Effects/Sci Fi Weapons Cyberpunk Arsenal Preview/AUDIO/GUNPis_Pistol Fire Longer Tail_05.wav" id="1_wewsj"]
+
+[node name="arch_bullet_1_sfx" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_wewsj")
+volume_db = -14.0
+autoplay = true
+script = ExtResource("1_pqyg8")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://crs73wupd8t2e"]
+
+[ext_resource type="AudioStream" uid="uid://cndcgevowv3v4" path="res://Resources/SFX/200 Free SFX/GameSFX/Weapon/laser/Retro Gun Laser SingleShot 01.wav" id="1_33ye0"]
+[ext_resource type="Script" path="res://Script/Bullet/Enemy/enemy_bullet_1_sfx.gd" id="2_ht4e2"]
+
+[node name="enemy_bullet_1_sfx" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_33ye0")
+volume_db = -14.0
+autoplay = true
+script = ExtResource("2_ht4e2")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

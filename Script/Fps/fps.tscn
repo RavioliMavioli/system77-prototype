@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmy8mjos3yuo8"]
+
+[ext_resource type="Theme" uid="uid://b6ghro2b3hnjk" path="res://Theme/theme.tres" id="1_8e1cp"]
+[ext_resource type="Script" path="res://Script/Fps/fps.gd" id="1_kduxe"]
+
+[node name="FPS" type="Node2D"]
+
+[node name="fps" type="Label" parent="."]
+offset_left = 1144.0
+offset_top = 24.0
+offset_right = 1145.0
+offset_bottom = 58.0
+theme = ExtResource("1_8e1cp")
+script = ExtResource("1_kduxe")

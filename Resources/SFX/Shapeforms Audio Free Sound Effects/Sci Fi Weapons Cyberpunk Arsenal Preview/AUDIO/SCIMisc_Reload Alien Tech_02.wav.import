@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bkfqytlgfawxm"
+path="res://.godot/imported/SCIMisc_Reload Alien Tech_02.wav-fd4d15fc3eedc4a48a416b767c605a7f.sample"
+
+[deps]
+
+source_file="res://Resources/SFX/Shapeforms Audio Free Sound Effects/Sci Fi Weapons Cyberpunk Arsenal Preview/AUDIO/SCIMisc_Reload Alien Tech_02.wav"
+dest_files=["res://.godot/imported/SCIMisc_Reload Alien Tech_02.wav-fd4d15fc3eedc4a48a416b767c605a7f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

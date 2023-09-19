@@ -1,0 +1,808 @@
+[gd_scene load_steps=46 format=3 uid="uid://b0u5pvh501ycc"]
+
+[ext_resource type="Script" path="res://Script/Camera/player_camera.gd" id="1_1dglo"]
+[ext_resource type="Script" path="res://Scene/Level 1/level1.gd" id="1_6i3jk"]
+[ext_resource type="Shader" path="res://Shader/blur.gdshader" id="2_8e6g4"]
+[ext_resource type="Script" path="res://Scene/Level 1/dead.gd" id="2_25pto"]
+[ext_resource type="PackedScene" uid="uid://cb7xql0s1of1f" path="res://Script/Entity/Player/Arch/arch_player.tscn" id="2_e7bg5"]
+[ext_resource type="Script" path="res://Scene/Level 1/pause.gd" id="2_ttm3d"]
+[ext_resource type="Shader" path="res://Scene/Start Screen/chromatic_aberration.gdshader" id="3_8pkg7"]
+[ext_resource type="PackedScene" uid="uid://bjdas61lcxqil" path="res://Script/UI/ui.tscn" id="3_nncyc"]
+[ext_resource type="Texture2D" uid="uid://mspgj7666fiq" path="res://Resources/Main Menu/check.png" id="3_uhxt2"]
+[ext_resource type="FontFile" uid="uid://bq5m6ur305wen" path="res://Fonts/Urbanist-fonts/Urbanist-Bold.ttf" id="3_xjcqy"]
+[ext_resource type="Texture2D" uid="uid://c75nkdk65e0pa" path="res://Resources/Main Menu/uncheck.png" id="4_8shsj"]
+[ext_resource type="Script" path="res://Script/chromatic_aberration.gd" id="4_mr8j8"]
+[ext_resource type="PackedScene" uid="uid://bmy8mjos3yuo8" path="res://Script/Fps/fps.tscn" id="4_tx14r"]
+[ext_resource type="Shader" path="res://Shader/vignette.gdshader" id="4_ykvx8"]
+[ext_resource type="PackedScene" uid="uid://d15xdd6wpqr8k" path="res://Scene/map.tscn" id="12_72tsy"]
+
+[sub_resource type="Animation" id="Animation_uh0c1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D/ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D/Eliminate:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera2D/Eliminate:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera2D/TUTOEIAL:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera2D/TUTOEIAL:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Retry/Dead:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Retry/Dead:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_aho5v"]
+resource_name = "game_over"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Retry/Dead:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Retry/Dead:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D/ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera2D/ColorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.454902)]
+}
+
+[sub_resource type="Animation" id="Animation_gnuy1"]
+resource_name = "start"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D/ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D/Eliminate:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera2D/Eliminate:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera2D/TUTOEIAL:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera2D/TUTOEIAL:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(5, 5.5, 9.5, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yk8hg"]
+_data = {
+"RESET": SubResource("Animation_uh0c1"),
+"game_over": SubResource("Animation_aho5v"),
+"start": SubResource("Animation_gnuy1")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ag323"]
+shader = ExtResource("2_8e6g4")
+shader_parameter/blur = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6a0y0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2c7o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jlow"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1mkvj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m82c3"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fv4l3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d3xab"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1kefb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2x13e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uacl4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_urjs8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yj4g7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vdw7s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r7opx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bxqby"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vc1b0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ecd5"]
+
+[sub_resource type="Theme" id="Theme_nmto4"]
+default_font = ExtResource("3_xjcqy")
+default_font_size = 18
+Button/colors/font_color = Color(1, 1, 2, 1)
+Button/colors/font_disabled_color = Color(0.501961, 0.501961, 0.501961, 0.501961)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 0)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 16
+Button/styles/disabled = SubResource("StyleBoxEmpty_6a0y0")
+Button/styles/focus = SubResource("StyleBoxEmpty_r2c7o")
+Button/styles/hover = SubResource("StyleBoxFlat_2jlow")
+Button/styles/normal = SubResource("StyleBoxEmpty_1mkvj")
+Button/styles/pressed = SubResource("StyleBoxFlat_m82c3")
+CheckBox/colors/font_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+CheckBox/colors/font_focus_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_hover_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_outline_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_pressed_color = Color(1, 1, 1, 1)
+CheckBox/icons/checked = ExtResource("3_uhxt2")
+CheckBox/icons/checked_disabled = ExtResource("3_uhxt2")
+CheckBox/styles/disabled = SubResource("StyleBoxEmpty_fv4l3")
+CheckBox/styles/focus = SubResource("StyleBoxEmpty_d3xab")
+CheckBox/styles/hover = SubResource("StyleBoxEmpty_1kefb")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxEmpty_2x13e")
+CheckBox/styles/normal = SubResource("StyleBoxEmpty_uacl4")
+CheckBox/styles/pressed = SubResource("StyleBoxEmpty_urjs8")
+CheckButton/colors/font_color = Color(1, 1, 1, 1)
+CheckButton/colors/font_disabled_color = Color(1, 1, 1, 0)
+CheckButton/colors/font_focus_color = Color(1, 1, 1, 1)
+CheckButton/colors/font_hover_color = Color(1, 1, 1, 0.686275)
+CheckButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+CheckButton/colors/font_outline_color = Color(1, 1, 1, 1)
+CheckButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+CheckButton/icons/checked = ExtResource("3_uhxt2")
+CheckButton/icons/unchecked = ExtResource("4_8shsj")
+CheckButton/styles/disabled = SubResource("StyleBoxEmpty_yj4g7")
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_vdw7s")
+CheckButton/styles/hover = SubResource("StyleBoxEmpty_r7opx")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_bxqby")
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_vc1b0")
+CheckButton/styles/pressed = SubResource("StyleBoxEmpty_1ecd5")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xf666"]
+line_spacing = 0.0
+font = ExtResource("3_xjcqy")
+font_size = 18
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ltlgj"]
+shader = ExtResource("3_8pkg7")
+shader_parameter/strength_x = 2.0
+shader_parameter/strength_y = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xyjrf"]
+shader = ExtResource("4_ykvx8")
+shader_parameter/color = null
+shader_parameter/multipler = 0.2
+shader_parameter/softnes = 2.0
+
+[sub_resource type="Environment" id="Environment_thdpa"]
+background_mode = 3
+glow_enabled = true
+glow_blend_mode = 1
+glow_hdr_threshold = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tkfw"]
+size = Vector2(116, 496.667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vuij6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7te13"]
+line_spacing = 0.0
+font = ExtResource("3_xjcqy")
+font_size = 20
+
+[node name="level1" type="Node2D"]
+light_mask = 2
+script = ExtResource("1_6i3jk")
+
+[node name="Start" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yk8hg")
+}
+
+[node name="Retry" type="CanvasLayer" parent="."]
+offset = Vector2(640, 360)
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 640, 360)
+
+[node name="Dead" type="Node2D" parent="Retry"]
+process_mode = 3
+top_level = true
+position = Vector2(-428.667, -240)
+script = ExtResource("2_25pto")
+
+[node name="ColorRect" type="ColorRect" parent="Retry/Dead"]
+offset_left = 199.0
+offset_top = 42.0
+offset_right = 642.0
+offset_bottom = 43.0
+
+[node name="ColorRect2" type="ColorRect" parent="Retry/Dead"]
+offset_left = 198.667
+offset_top = 384.0
+offset_right = 641.667
+offset_bottom = 385.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="Retry/Dead"]
+offset_left = 199.333
+offset_top = 42.6667
+offset_right = 642.333
+offset_bottom = 383.667
+
+[node name="ColorRect" type="ColorRect" parent="Retry/Dead/MarginContainer2"]
+material = SubResource("ShaderMaterial_ag323")
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Retry/Dead/MarginContainer2"]
+custom_minimum_size = Vector2(58, 41)
+layout_mode = 2
+theme = SubResource("Theme_nmto4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Retry/Dead/MarginContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 100
+
+[node name="Label" type="Label" parent="Retry/Dead/MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_xf666")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hbox" type="HBoxContainer" parent="Retry/Dead/MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 85
+
+[node name="QuitMenu" type="Button" parent="Retry/Dead/MarginContainer2/MarginContainer/VBoxContainer/Hbox"]
+process_mode = 3
+layout_mode = 2
+text = "     QUIT TO MENU     "
+
+[node name="Retry" type="Button" parent="Retry/Dead/MarginContainer2/MarginContainer/VBoxContainer/Hbox"]
+process_mode = 2
+layout_mode = 2
+text = "     RETRY     "
+
+[node name="Pause" type="CanvasLayer" parent="."]
+offset = Vector2(640, 360)
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 640, 360)
+
+[node name="Pause" type="Node2D" parent="Pause"]
+process_mode = 3
+top_level = true
+position = Vector2(-428.667, -240)
+script = ExtResource("2_ttm3d")
+
+[node name="ColorRect" type="ColorRect" parent="Pause/Pause"]
+offset_left = 199.0
+offset_top = 42.0
+offset_right = 642.0
+offset_bottom = 43.0
+
+[node name="ColorRect2" type="ColorRect" parent="Pause/Pause"]
+offset_left = 198.667
+offset_top = 384.0
+offset_right = 641.667
+offset_bottom = 385.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="Pause/Pause"]
+offset_left = 199.333
+offset_top = 42.6667
+offset_right = 642.333
+offset_bottom = 383.667
+
+[node name="ColorRect" type="ColorRect" parent="Pause/Pause/MarginContainer2"]
+material = SubResource("ShaderMaterial_ag323")
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Pause/Pause/MarginContainer2"]
+custom_minimum_size = Vector2(58, 41)
+layout_mode = 2
+theme = SubResource("Theme_nmto4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/Pause/MarginContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 100
+
+[node name="Label" type="Label" parent="Pause/Pause/MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Paused"
+label_settings = SubResource("LabelSettings_xf666")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hbox" type="HBoxContainer" parent="Pause/Pause/MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 85
+
+[node name="QuitMenu" type="Button" parent="Pause/Pause/MarginContainer2/MarginContainer/VBoxContainer/Hbox"]
+process_mode = 3
+layout_mode = 2
+text = "     QUIT TO MENU     "
+
+[node name="Resume" type="Button" parent="Pause/Pause/MarginContainer2/MarginContainer/VBoxContainer/Hbox"]
+process_mode = 2
+layout_mode = 2
+text = "     RESUME     "
+
+[node name="Effects" type="CanvasLayer" parent="."]
+offset = Vector2(640, 360)
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 640, 360)
+
+[node name="Chromatic" type="ColorRect" parent="Effects"]
+z_index = 10
+z_as_relative = false
+material = SubResource("ShaderMaterial_ltlgj")
+offset_left = -440.0
+offset_top = -248.0
+offset_right = 448.0
+offset_bottom = 264.0
+pivot_offset = Vector2(640, 360)
+mouse_filter = 2
+script = ExtResource("4_mr8j8")
+metadata/_edit_lock_ = true
+
+[node name="Vignette" type="ColorRect" parent="Effects"]
+material = SubResource("ShaderMaterial_xyjrf")
+offset_left = -440.0
+offset_top = -248.0
+offset_right = 451.0
+offset_bottom = 264.0
+mouse_filter = 2
+color = Color(0.778475, 2.59906e-06, 0.468366, 1)
+metadata/_edit_lock_ = true
+
+[node name="Bloom" type="WorldEnvironment" parent="Effects"]
+environment = SubResource("Environment_thdpa")
+
+[node name="Map" parent="." instance=ExtResource("12_72tsy")]
+position = Vector2(0, 429)
+scale = Vector2(1.5, 1.5)
+
+[node name="M" type="StaticBody2D" parent="."]
+position = Vector2(0, 429)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="M"]
+position = Vector2(-742.667, -250.333)
+shape = SubResource("RectangleShape2D_8tkfw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="M"]
+position = Vector2(843.333, -270)
+shape = SubResource("RectangleShape2D_8tkfw")
+
+[node name="Edge" type="Node2D" parent="."]
+position = Vector2(6, 14)
+
+[node name="Edge" type="Area2D" parent="Edge"]
+position = Vector2(-366, -89)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge2" type="Area2D" parent="Edge"]
+position = Vector2(-198, -89)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge2"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge3" type="Area2D" parent="Edge"]
+position = Vector2(42, 226)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge3"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge4" type="Area2D" parent="Edge"]
+position = Vector2(234, 226)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge4"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge5" type="Area2D" parent="Edge"]
+position = Vector2(450, 10)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge5"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge7" type="Area2D" parent="Edge"]
+position = Vector2(-7, 442)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge7"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge8" type="Area2D" parent="Edge"]
+position = Vector2(282, 442)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge8"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge9" type="Area2D" parent="Edge"]
+position = Vector2(258, 514)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge9"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge10" type="Area2D" parent="Edge"]
+position = Vector2(17, 514)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge10"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge11" type="Area2D" parent="Edge"]
+position = Vector2(770, 322)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge11"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge12" type="Area2D" parent="Edge"]
+position = Vector2(1026, 226)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge12"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge13" type="Area2D" parent="Edge"]
+position = Vector2(1002, 274)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge13"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge14" type="Area2D" parent="Edge"]
+position = Vector2(978, 322)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge14"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge15" type="Area2D" parent="Edge"]
+position = Vector2(954, 370)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge15"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge16" type="Area2D" parent="Edge"]
+position = Vector2(-462, 370)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge16"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge17" type="Area2D" parent="Edge"]
+position = Vector2(-510, 322)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge17"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge18" type="Area2D" parent="Edge"]
+position = Vector2(-726, 178)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge18"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge19" type="Area2D" parent="Edge"]
+position = Vector2(-678, 250)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge19"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge20" type="Area2D" parent="Edge"]
+position = Vector2(-846, 177)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge20"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge21" type="Area2D" parent="Edge"]
+position = Vector2(-966, 226)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge21"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Edge6" type="Area2D" parent="Edge"]
+position = Vector2(618, 10)
+collision_layer = 256
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge/Edge6"]
+shape = SubResource("RectangleShape2D_vuij6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+top_level = true
+light_mask = 2
+visibility_layer = 2
+zoom = Vector2(1.5, 1.5)
+script = ExtResource("1_1dglo")
+
+[node name="ui" parent="Camera2D" instance=ExtResource("3_nncyc")]
+offset_left = -427.0
+offset_top = -240.0
+offset_right = -299.0
+offset_bottom = -168.0
+scale = Vector2(0.665, 0.665)
+
+[node name="FPS" parent="Camera2D" instance=ExtResource("4_tx14r")]
+position = Vector2(-427, -240)
+scale = Vector2(0.667, 0.667)
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+visible = false
+offset_left = -591.0
+offset_top = -339.0
+offset_right = 721.0
+offset_bottom = 399.0
+color = Color(0, 0, 0, 1)
+
+[node name="Eliminate" type="Label" parent="Camera2D"]
+offset_left = -354.0
+offset_top = -176.0
+offset_right = 578.0
+offset_bottom = -144.0
+text = "OBJECTIVE: ELIMINATE THE ROBOT VIRUS AND GET AS MUCH SCORE AS POSSIBLE"
+label_settings = SubResource("LabelSettings_7te13")
+
+[node name="TUTOEIAL" type="Label" parent="Camera2D"]
+offset_left = -354.0
+offset_top = -176.0
+offset_right = 578.0
+offset_bottom = -144.0
+text = "CONTROL: WASD + SPACE
+
+LEFT MOUSE BUTTON = SHOOT
+RIGHT MOUSE BUTTON = MISSILE
+
+E =  HOOK
+
+DOUBLE TAP A/D = DASH"
+label_settings = SubResource("LabelSettings_7te13")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="Camera2D"]
+
+[node name="MainPlayer" parent="." instance=ExtResource("2_e7bg5")]
+
+[node name="SaveState" type="Timer" parent="."]
+autostart = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(37, 22)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Start2" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[node name="WaitTime" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="animation_finished" from="Start" to="." method="_on_start_animation_finished"]
+[connection signal="pressed" from="Retry/Dead/MarginContainer2/MarginContainer/VBoxContainer/Hbox/QuitMenu" to="Retry/Dead" method="_on_quit_menu_pressed"]
+[connection signal="pressed" from="Retry/Dead/MarginContainer2/MarginContainer/VBoxContainer/Hbox/Retry" to="Retry/Dead" method="_on_resume_pressed"]
+[connection signal="pressed" from="Retry/Dead/MarginContainer2/MarginContainer/VBoxContainer/Hbox/Retry" to="Retry/Dead" method="_on_retry_pressed"]
+[connection signal="pressed" from="Pause/Pause/MarginContainer2/MarginContainer/VBoxContainer/Hbox/QuitMenu" to="Pause/Pause" method="_on_quit_menu_pressed"]
+[connection signal="pressed" from="Pause/Pause/MarginContainer2/MarginContainer/VBoxContainer/Hbox/Resume" to="Pause/Pause" method="_on_resume_pressed"]
+[connection signal="timeout" from="SaveState" to="." method="_on_save_state_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Start2" to="." method="_on_start_2_timeout"]
+[connection signal="timeout" from="WaitTime" to="." method="_on_wait_time_timeout"]

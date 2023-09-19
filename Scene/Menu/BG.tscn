@@ -1,0 +1,157 @@
+[gd_scene load_steps=10 format=3 uid="uid://b0npyif713g02"]
+
+[ext_resource type="Script" path="res://Scene/Menu/BG_script.gd" id="1_ipyl8"]
+[ext_resource type="Texture2D" uid="uid://dki2sfh7mh5xy" path="res://Resources/Main Menu/bg.png" id="2_j48ib"]
+[ext_resource type="Texture2D" uid="uid://ce1hp0ceq1emm" path="res://Resources/Main Menu/lfschan.png" id="3_14dao"]
+[ext_resource type="Texture2D" uid="uid://bfoflpp6pl2p5" path="res://Resources/Main Menu/archlow.png" id="4_btmg5"]
+
+[sub_resource type="Gradient" id="Gradient_kpvss"]
+offsets = PackedFloat32Array(0, 0.473016, 1)
+colors = PackedColorArray(0.270588, 0.258824, 1, 1, 0.356863, 0.839216, 1, 0.52549, 0.454902, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_n0dnp"]
+gradient = SubResource("Gradient_kpvss")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e70et"]
+lifetime_randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 60.0
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+angular_velocity_min = -200.0
+angular_velocity_max = 200.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -20.0
+linear_accel_max = 20.0
+radial_accel_min = -10.0
+radial_accel_max = 30.0
+angle_min = -30.0
+angle_max = 300.0
+scale_min = 0.0
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_n0dnp")
+turbulence_enabled = true
+turbulence_noise_strength = 20.0
+turbulence_noise_scale = 10.0
+turbulence_noise_speed = Vector3(1, 1, 0)
+turbulence_noise_speed_random = 4.0
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.03
+turbulence_initial_displacement_max = 10.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vo5pn"]
+lifetime_randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 60.0
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+angular_velocity_min = -200.0
+angular_velocity_max = 200.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -20.0
+linear_accel_max = 20.0
+radial_accel_min = -10.0
+radial_accel_max = 30.0
+angle_min = -30.0
+angle_max = 300.0
+scale_min = 0.0
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_n0dnp")
+turbulence_enabled = true
+turbulence_noise_strength = 20.0
+turbulence_noise_scale = 10.0
+turbulence_noise_speed = Vector3(1, 1, 0)
+turbulence_noise_speed_random = 4.0
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.03
+turbulence_initial_displacement_max = 10.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sidt2"]
+lifetime_randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 80.0
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -20.0
+linear_accel_max = 20.0
+radial_accel_min = -10.0
+radial_accel_max = 30.0
+angle_min = -30.0
+angle_max = 300.0
+scale_min = 0.0
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_n0dnp")
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.0
+turbulence_initial_displacement_max = 46.5
+
+[node name="BG" type="Node2D"]
+script = ExtResource("1_ipyl8")
+
+[node name="Back" type="Node2D" parent="."]
+
+[node name="Bg" type="Sprite2D" parent="Back"]
+position = Vector2(632, 360)
+scale = Vector2(0.755556, 0.755555)
+texture = ExtResource("2_j48ib")
+
+[node name="Front" type="Node2D" parent="."]
+
+[node name="lfs" type="Sprite2D" parent="Front"]
+position = Vector2(800, 408)
+scale = Vector2(0.737044, 0.737044)
+texture = ExtResource("3_14dao")
+
+[node name="arch" type="Sprite2D" parent="Front"]
+visible = false
+position = Vector2(848, 416)
+scale = Vector2(0.761905, 0.761905)
+texture = ExtResource("4_btmg5")
+
+[node name="ParticleParent" type="Node2D" parent="."]
+
+[node name="Particle" type="Node2D" parent="ParticleParent"]
+position = Vector2(640, 360)
+
+[node name="ParticleL" type="GPUParticles2D" parent="ParticleParent/Particle"]
+position = Vector2(-640, 352)
+rotation = -0.996583
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_e70et")
+lifetime = 10.0
+explosiveness = 0.1
+trail_lifetime = 0.03
+
+[node name="ParticleR" type="GPUParticles2D" parent="ParticleParent/Particle"]
+position = Vector2(640, 360)
+rotation = -2.38412
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_vo5pn")
+lifetime = 10.0
+explosiveness = 0.1
+trail_lifetime = 0.03
+
+[node name="ParticleM" type="GPUParticles2D" parent="ParticleParent/Particle"]
+position = Vector2(0, 424)
+rotation = -1.5865
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_sidt2")
+lifetime = 10.0
+explosiveness = 0.2
+trail_lifetime = 0.08
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

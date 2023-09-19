@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://brqmff70qlnun"]
+
+[ext_resource type="Script" path="res://Script/Entity/Player/Arch/Hook/hook_piece.gd" id="1_eduvl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mnrct"]
+radius = 5.0
+height = 18.0
+
+[node name="hook_piece" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 16
+linear_damp = 1.0
+angular_damp = 1.0
+script = ExtResource("1_eduvl")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_mnrct")
+
+[node name="Joint" type="PinJoint2D" parent="Collision"]
+position = Vector2(0, 9)
+bias = 0.25
+softness = 0.1

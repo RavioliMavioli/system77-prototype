@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtibhfwx5ajqi"]
+
+[ext_resource type="Texture2D" uid="uid://d1h7abrwpnunq" path="res://Resources/icon.svg" id="1_486aa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tkub3"]
+radius = 4.0
+
+[node name="hook_end" type="RigidBody2D"]
+collision_mask = 16
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tkub3")
+
+[node name="Joint" type="PinJoint2D" parent="Collision"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.0625, 0.0625)
+texture = ExtResource("1_486aa")

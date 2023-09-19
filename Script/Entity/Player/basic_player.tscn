@@ -1,0 +1,233 @@
+[gd_scene load_steps=17 format=3 uid="uid://ctqf11ltd33hw"]
+
+[ext_resource type="Script" path="res://Script/Entity/Player/basic_player_control.gd" id="1_e8txh"]
+[ext_resource type="Script" path="res://Script/Entity/Player/hitbox.gd" id="2_d3t8x"]
+[ext_resource type="Texture2D" uid="uid://cmvavuat4he5m" path="res://Resources/crosshair.png" id="3_37rd2"]
+[ext_resource type="AudioStream" uid="uid://cukt7xxv7hqqy" path="res://Resources/jump1.mp3" id="4_aha5r"]
+[ext_resource type="AudioStream" uid="uid://b4ihhrxtp7tr7" path="res://Resources/jump2.mp3" id="5_5nb0b"]
+[ext_resource type="AudioStream" uid="uid://bl4mgyehtkhf4" path="res://Resources/jump3.mp3" id="6_30ncf"]
+[ext_resource type="AudioStream" uid="uid://cns4ud0htagla" path="res://Resources/SFX/8-bit 16-bit Sound Effects (x25) Pack/Boss hit 1.wav" id="7_2c13n"]
+[ext_resource type="FontFile" uid="uid://cno3wcun2iakl" path="res://Fonts/Urbanist-fonts/Urbanist-Regular.ttf" id="7_v2b60"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ix6h"]
+radius = 9.0
+height = 50.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lp3to"]
+size = Vector2(18, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uydff"]
+size = Vector2(108, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2smv"]
+size = Vector2(14, 2.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axdng"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mwxk"]
+size = Vector2(10, 10)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_krf51"]
+radius = 6.0
+height = 40.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_xvw1t"]
+font = ExtResource("7_v2b60")
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(0, -5)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_e8txh")
+RUNNING_SPEED = 300.0
+JUMP_VELOCITY = 400.0
+DOUBLE_JUMP_VELOCITY = 400.0
+
+[node name="MainCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_3ix6h")
+
+[node name="CollisionOnGround" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16.5)
+shape = SubResource("RectangleShape2D_lp3to")
+
+[node name="GroundCheck" type="RayCast2D" parent="."]
+position = Vector2(0, 32)
+target_position = Vector2(0, 15)
+collision_mask = 5
+hit_from_inside = true
+
+[node name="JumpGroundCheck" type="Area2D" parent="."]
+visible = false
+position = Vector2(0, 32)
+collision_layer = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JumpGroundCheck"]
+position = Vector2(0, 33)
+shape = SubResource("RectangleShape2D_uydff")
+
+[node name="UpCheck" type="Area2D" parent="."]
+position = Vector2(0, -19)
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpCheck"]
+position = Vector2(0, -0.75)
+shape = SubResource("RectangleShape2D_q2smv")
+
+[node name="LedgeDetectionL" type="Area2D" parent="."]
+position = Vector2(-8, -13)
+collision_layer = 0
+collision_mask = 256
+
+[node name="LedgeDetectionL" type="CollisionShape2D" parent="LedgeDetectionL"]
+shape = SubResource("RectangleShape2D_axdng")
+debug_color = Color(0.572549, 0.545098, 0.27451, 0.419608)
+
+[node name="LedgeDetectionR" type="Area2D" parent="."]
+position = Vector2(8, -13)
+collision_layer = 0
+collision_mask = 256
+
+[node name="LedgeDetectionR" type="CollisionShape2D" parent="LedgeDetectionR"]
+shape = SubResource("RectangleShape2D_5mwxk")
+debug_color = Color(0.572549, 0.545098, 0.27451, 0.419608)
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("2_d3t8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_krf51")
+debug_color = Color(0.967573, 9.62615e-08, 0.473402, 0.42)
+
+[node name="AimCenter" type="Marker2D" parent="."]
+
+[node name="BulletSpawn" type="Marker2D" parent="AimCenter"]
+position = Vector2(29, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="AimCenter/BulletSpawn"]
+visible = false
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("3_37rd2")
+
+[node name="Jump1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_aha5r")
+volume_db = -16.0
+
+[node name="Jump2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5nb0b")
+volume_db = -10.0
+
+[node name="Jump3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_30ncf")
+volume_db = -10.0
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_2c13n")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="DashCooldown" type="Timer" parent="Timer"]
+wait_time = 3.0
+one_shot = true
+
+[node name="DashDuration" type="Timer" parent="Timer"]
+wait_time = 0.2
+one_shot = true
+
+[node name="DoubleJump" type="Timer" parent="Timer"]
+wait_time = 0.01
+one_shot = true
+
+[node name="DoubleTap" type="Timer" parent="Timer"]
+wait_time = 0.3
+one_shot = true
+
+[node name="CoyoteJump" type="Timer" parent="Timer"]
+wait_time = 0.1
+one_shot = true
+
+[node name="JumpDuration" type="Timer" parent="Timer"]
+wait_time = 0.3
+one_shot = true
+
+[node name="GhostSpawn" type="Timer" parent="Timer"]
+wait_time = 0.01
+
+[node name="Hit" type="Timer" parent="Timer"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Label" type="Node2D" parent="."]
+visible = false
+
+[node name="Ket" type="Label" parent="Label"]
+modulate = Color(1, 1, 1, 0.556863)
+offset_left = 35.0
+offset_top = -3.0
+offset_right = 136.0
+offset_bottom = 66.0
+text = "State	:
+Facing:
+Head:
+Flip:
+Fire:"
+label_settings = SubResource("LabelSettings_xvw1t")
+
+[node name="CharState" type="Label" parent="Label"]
+offset_left = 89.0
+offset_top = -3.0
+offset_right = 190.0
+offset_bottom = 66.0
+text = "forward"
+label_settings = SubResource("LabelSettings_xvw1t")
+
+[node name="CharFacing" type="Label" parent="Label"]
+offset_left = 89.0
+offset_top = 21.0
+offset_right = 190.0
+offset_bottom = 90.0
+text = "backward"
+label_settings = SubResource("LabelSettings_xvw1t")
+
+[node name="CharHead" type="Label" parent="Label"]
+offset_left = 89.0
+offset_top = 43.0
+offset_right = 190.0
+offset_bottom = 112.0
+text = "up"
+label_settings = SubResource("LabelSettings_xvw1t")
+
+[node name="CharFlip" type="Label" parent="Label"]
+offset_left = 89.0
+offset_top = 66.0
+offset_right = 190.0
+offset_bottom = 135.0
+text = "up"
+label_settings = SubResource("LabelSettings_xvw1t")
+
+[node name="CharFire" type="Label" parent="Label"]
+offset_left = 89.0
+offset_top = 89.0
+offset_right = 190.0
+offset_bottom = 158.0
+text = "up"
+label_settings = SubResource("LabelSettings_xvw1t")
+
+[connection signal="body_entered" from="JumpGroundCheck" to="." method="_on_jump_ground_check_body_entered"]
+[connection signal="body_entered" from="UpCheck" to="." method="_on_up_check_body_entered"]
+[connection signal="area_entered" from="LedgeDetectionL" to="." method="_on_ledge_detection_l_area_entered"]
+[connection signal="area_exited" from="LedgeDetectionL" to="." method="_on_ledge_detection_l_area_exited"]
+[connection signal="area_entered" from="LedgeDetectionR" to="." method="_on_ledge_detection_r_area_entered"]
+[connection signal="area_exited" from="LedgeDetectionR" to="." method="_on_ledge_detection_r_area_exited"]
+[connection signal="timeout" from="Timer/DashCooldown" to="." method="_on_dash_cooldown_timeout"]
+[connection signal="timeout" from="Timer/DashDuration" to="." method="_on_dash_duration_timeout"]
+[connection signal="timeout" from="Timer/DoubleJump" to="." method="_on_double_jump_timeout"]
+[connection signal="timeout" from="Timer/CoyoteJump" to="." method="_on_coyote_jump_timeout"]
+[connection signal="timeout" from="Timer/GhostSpawn" to="." method="_on_ghost_spawn_timeout"]
+[connection signal="timeout" from="Timer/Hit" to="." method="_on_hit_timeout"]

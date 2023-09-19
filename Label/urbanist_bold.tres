@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ca4kaifmlb6qi"]
+
+[ext_resource type="FontFile" uid="uid://bq5m6ur305wen" path="res://Fonts/Urbanist-fonts/Urbanist-Bold.ttf" id="1_xuf4j"]
+
+[resource]
+line_spacing = 0.0
+font = ExtResource("1_xuf4j")
+font_size = 26

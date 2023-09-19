@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhx1fus3ag0gv"
+path="res://.godot/imported/LASRGun_Ion Pistol C Burst_02.wav-e4508748cc8ab52c895259e58b7bf601.sample"
+
+[deps]
+
+source_file="res://Resources/SFX/Shapeforms Audio Free Sound Effects/Sci Fi Weapons Cyberpunk Arsenal Preview/AUDIO/LASRGun_Ion Pistol C Burst_02.wav"
+dest_files=["res://.godot/imported/LASRGun_Ion Pistol C Burst_02.wav-e4508748cc8ab52c895259e58b7bf601.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

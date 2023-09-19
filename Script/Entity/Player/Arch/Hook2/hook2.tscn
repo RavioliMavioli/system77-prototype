@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dna5py5tdf5l5"]
+
+[ext_resource type="Texture2D" uid="uid://cjckhbryog3tu" path="res://Resources/link.png" id="1_7u0q0"]
+[ext_resource type="Script" path="res://Script/Entity/Player/Arch/Hook2/hook2.gd" id="1_setah"]
+[ext_resource type="Texture2D" uid="uid://bp6ppoquogxlg" path="res://Resources/hook.png" id="2_fak3y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_txs1o"]
+radius = 5.0
+height = 20.0
+
+[node name="hook2" type="Node2D"]
+position = Vector2(0, 273)
+script = ExtResource("1_setah")
+
+[node name="Link" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(0, -273)
+texture = ExtResource("1_7u0q0")
+centered = false
+offset = Vector2(-8, 0)
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Tip" type="CharacterBody2D" parent="."]
+position = Vector2(0, -273)
+collision_layer = 0
+collision_mask = 5
+
+[node name="Hook" type="Sprite2D" parent="Tip"]
+position = Vector2(0, -12)
+texture = ExtResource("2_fak3y")
+centered = false
+offset = Vector2(-16, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tip"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_txs1o")

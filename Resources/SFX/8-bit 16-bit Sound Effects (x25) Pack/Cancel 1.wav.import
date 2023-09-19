@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ctww3j7jn5j28"
+path="res://.godot/imported/Cancel 1.wav-386c1476205997cef4f0527db3af3320.sample"
+
+[deps]
+
+source_file="res://Resources/SFX/8-bit 16-bit Sound Effects (x25) Pack/Cancel 1.wav"
+dest_files=["res://.godot/imported/Cancel 1.wav-386c1476205997cef4f0527db3af3320.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

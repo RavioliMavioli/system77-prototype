@@ -1,0 +1,61 @@
+res://addons/dialogue_manager/components/code_edit.tscn::9f58209b656e3a5086072fc86bb45178::1694226695::res://.godot/exported/133200997/export-afb545b170719e27a7fd3f1340116b10-code_edit.scn
+res://addons/dialogue_manager/components/download_update_panel.tscn::fe7200d96fd5992e46436844fb5fb04d::1694226695::res://.godot/exported/133200997/export-dd2309c54bebb1b8b4e2968b0836701e-download_update_panel.scn
+res://addons/dialogue_manager/components/errors_panel.tscn::87e2e2fc13b287f96753f502c9ab62e2::1694226695::res://.godot/exported/133200997/export-ea6e1bfc6d22f187ea4da24ace7b5dce-errors_panel.scn
+res://addons/dialogue_manager/components/files_list.tscn::b096e7cf25ebbab60be19b1b2c7efad4::1694226695::res://.godot/exported/133200997/export-2a28997d3f2fb7eefb2a8324333da88f-files_list.scn
+res://addons/dialogue_manager/components/search_and_replace.tscn::8d16161fdbff4350e3dcb92d3cacae8c::1694226695::res://.godot/exported/133200997/export-d227edfbcd00f694e71f0a4ef2516c28-search_and_replace.scn
+res://addons/dialogue_manager/components/title_list.tscn::b47e27cd07ca499a2020560eb07c02a2::1694226695::res://.godot/exported/133200997/export-3f7e1494d2ca6bb96a353ad7ff2c972f-title_list.scn
+res://addons/dialogue_manager/components/update_button.tscn::106577a44370660f6e454de473aa23b9::1694226695::res://.godot/exported/133200997/export-7ca55931d1608d9ad1448730abe1df8e-update_button.scn
+res://addons/dialogue_manager/example_balloon/example_balloon.tscn::fc215ae1aa299855a39f324e2b2b6c6f::1694226695::res://.godot/exported/133200997/export-57fc9b32a4ae3d4a3041b46baf4b8f92-example_balloon.scn
+res://addons/dialogue_manager/example_balloon/small_example_balloon.tscn::ef5ad5fd74513e7228a29a4ff269c427::1694226695::res://.godot/exported/133200997/export-25872080cd204f02261b5746b425708f-small_example_balloon.scn
+res://addons/dialogue_manager/views/main_view.tscn::0ab2248e8bfac480b43b8f4c40028c3b::1694226695::res://.godot/exported/133200997/export-378867351062275ea9ff7cce9c21c795-main_view.scn
+res://addons/dialogue_manager/views/settings_view.tscn::55a30505f594e617dcd6d55946a9b546::1694226695::res://.godot/exported/133200997/export-e616ee8b42797cb31c0c61fda637fec0-settings_view.scn
+res://addons/dialogue_manager/dialogue_label.tscn::0250fa841c8b4e5ce21dc4be5987f31e::1694226695::res://.godot/exported/133200997/export-e41b7d5321416240678013b406b79557-dialogue_label.scn
+res://addons/dialogue_manager/test_scene.tscn::d2a49979fbd5dec1a89649e2cbd76d8e::1694226695::res://.godot/exported/133200997/export-74a175fe1e216df3bdf79c5c27a2ac2c-test_scene.scn
+res://Import/Tiles/tiles.tres::57313bcf66087fc82ad908f7b405b5f3::1694147007::res://.godot/exported/133200997/export-80dbcf59ac8555d3f014527fcb3d7cf9-tiles.res
+res://Import/Tiles/Tiles.tscn::c8efb7f44cac48396de5d4ed40362b37::1694138950::res://.godot/exported/133200997/export-5d7157b8d171b4bd94601f1f44a3ed68-Tiles.scn
+res://Label/urbanist_bold.tres::f205bd83dfdee06c1292cd05eb8a2288::1695014613::res://.godot/exported/133200997/export-2c6af857d2c369d778951baa4622c46e-urbanist_bold.res
+res://Scene/Cutscene/cutscene.tscn::d1e8b32fd9994f35b14b048c5c1c66cc::1694435111::res://.godot/exported/133200997/export-889f6fdf3efaee6739917d6a8edf84a5-cutscene.scn
+res://Scene/Menu/BG.tscn::18099202673ecaf94e5e1fd1da6bfc77::1694969545::res://.godot/exported/133200997/export-df6c1c5451801650acc5927f606b6232-BG.scn
+res://Scene/Menu/Button.tres::a997d8f35dcec4c8d159dc782a4ce76e::1694314914::res://.godot/exported/133200997/export-1fb9f608d01c9ed17cfc326ab8d23056-Button.res
+res://Scene/Menu/main_menu.tscn::a84f9f399c57056b1f13e8c39f1aa1c1::1695014614::res://.godot/exported/133200997/export-42526a031883de3bc8d29cd25aefd326-main_menu.scn
+res://Scene/Start Screen/bootsplash.tscn::a42a149fe718bfba94fd34cbf4b56ed6::1694612123::res://.godot/exported/133200997/export-1c9d1daff70e249546d406b6799490dc-bootsplash.scn
+res://Scene/Start Screen/start_screen.tscn::ba8a358609cd8951f752cd7e1dc711d1::1694933675::res://.godot/exported/133200997/export-3d4abba7e8337fbf951b9bb6e24c9013-start_screen.scn
+res://Script/Bullet/Arch/Bullet1/arch_bullet_1.tscn::ee5c67e2ca1890fd1e5284c686a68937::1695014614::res://.godot/exported/133200997/export-4946b42f8497916788d6e64446b36a11-arch_bullet_1.scn
+res://Script/Bullet/Arch/Bullet2/arch_bullet_2.tscn::9a17b5b258ac76b3d54911f59e3d7def::1695014614::res://.godot/exported/133200997/export-cd1dbcc0fe4b486ea0695f6aeca5ec14-arch_bullet_2.scn
+res://Script/Bullet/Test/test_gun_sfx1.tscn::25807b5e23d2242cc68131a55a54d124::1694743987::res://.godot/exported/133200997/export-90386f782d264a342e842dcd8c022d35-test_gun_sfx1.scn
+res://Script/Bullet/basic_bullet.tscn::92426eed446c60a60e70a82f6e47713d::1694703906::res://.godot/exported/133200997/export-7d6e7433065d796b566ba01886d5cc14-basic_bullet.scn
+res://Script/Bullet/basic_laser_beam.tscn::d948c4cfdfda566284b1cb3f41fcc4a2::1693923867::res://.godot/exported/133200997/export-3eb4c4d2b4b91130da23f1ec2997ef9e-basic_laser_beam.scn
+res://Script/Bullet/bullet_case.tscn::d0ca069d1f535194be460e9ae2ed4ff5::1693799292::res://.godot/exported/133200997/export-c23dbfefe76e815101f18d6444d759f2-bullet_case.scn
+res://Script/Cursor/cursor.tscn::6ab6a202b177f064be10ad07b381320d::1695014614::res://.godot/exported/133200997/export-4830bef68c761d292ceca62c2c5bc389-cursor.scn
+res://Script/Entity/Enemy/Test/enemy_test.tscn::9aea3a9056160a06e0ea934b611844a3::1694933675::res://.godot/exported/133200997/export-ed3b7b8115ed605b916624b55ecf2213-enemy_test.scn
+res://Script/Entity/Player/Arch/Hook/hook.tscn::12f66cf478fd29085b20a48bb59dc6e1::1694144305::res://.godot/exported/133200997/export-289de318a7ca05d985b6341bc936b79e-hook.scn
+res://Script/Entity/Player/Arch/Hook/hook_end.tscn::0f380c60b4b3e9b0bdda53f661bd698c::1694144305::res://.godot/exported/133200997/export-437c013ff60c0ecc7e6fe6477f88c903-hook_end.scn
+res://Script/Entity/Player/Arch/Hook/hook_piece.tscn::a11b501c6fde791e563dd81e2439bbee::1694144305::res://.godot/exported/133200997/export-cab4ecc493e0e38b0f8a42fc2ec63ffb-hook_piece.scn
+res://Script/Entity/Player/Arch/Hook/hook_tip.tscn::68ec2a59d4c98b94d1daf7397a4f669d::1694099230::res://.godot/exported/133200997/export-10596b23f114f532aeadf629ba40a28f-hook_tip.scn
+res://Script/Entity/Player/Arch/Hook2/hook2.tscn::a3beff19ef4ca54418109a8d54213a3b::1694595844::res://.godot/exported/133200997/export-d322bad7f5760d8587d6439a19900a3e-hook2.scn
+res://Script/Entity/Player/Arch/Locking System/lock.tscn::22af85ab6aef066e972598861d170b82::1694772482::res://.godot/exported/133200997/export-ad9555023b8366e34a9c2cda5ee8466d-lock.scn
+res://Script/Entity/Player/Arch/arch_sprite.tscn::b765b0627b25dd75e1b13175fbd577f3::1695014614::res://.godot/exported/133200997/export-bc3115b1ba17fc64206dbfc225d2e7b1-arch_sprite.scn
+res://Script/Entity/Player/Test/test.tscn::8ea0c52cb0a90d781f595749139557d4::1694636747::res://.godot/exported/133200997/export-52a85c3d00119abd755f40cb447d337e-test.scn
+res://Script/Fps/fps.tscn::1af3cf2e5119bdede0ac2b1c022d575f::1694331494::res://.godot/exported/133200997/export-2c68516e6b686fb595b6c467b94b0f6e-fps.scn
+res://Script/Transition Manager/transition_manager.tscn::2693da8e6423b4c4fb963a3b7756f691::1694360202::res://.godot/exported/133200997/export-18de6f21a2354d4dc32ea1005fd9c24b-transition_manager.scn
+res://Script/UI/ui.tres::55d9a1cb551469863b44e8733b643596::1695014613::res://.godot/exported/133200997/export-cba2c313b9b4bf7e10b15af978aca1a8-ui.res
+res://Script/UI/ui.tscn::e2ead25435e44437840a4b8b09eb9aa2::1695014614::res://.godot/exported/133200997/export-0b4a7e35e4180115f59d4d373d2ae646-ui.scn
+res://Theme/theme.tres::d421d0640c93191668fe448b8e81eb3a::1695014613::res://.godot/exported/133200997/export-10b30c272120a464291c74154a7e5fb4-theme.res
+res://Scene/Level 1/level1.tscn::7b6d6720f67ea959b7bd8fb2c454bf24::1695014614::res://.godot/exported/133200997/export-e032442e47c0dcd5a42b463c8b53ac98-level1.scn
+res://Scene/Test Scene/world.tscn::b16ff3c82ea0c76bd2f364f8a5d4b740::1694969545::res://.godot/exported/133200997/export-f76237fdde8a4a107505bb9f43440063-world.scn
+res://Script/Dropable/Ammo/ammo_drop.tscn::80c7796322cdbd7d2e6768a4d554f3fc::1694703906::res://.godot/exported/133200997/export-4c706d7057e26782c2fbe171c028079d-ammo_drop.scn
+res://Script/Dropable/Secondary Ammo/secondary_drop.tscn::e2d6d8af98bcdc81139216a845c97d38::1694703906::res://.godot/exported/133200997/export-153c37c0513e73d231ccb48ed7fc2654-secondary_drop.scn
+res://Script/Dropable/basic_dropable.tscn::e6c2bf526cf30a560da5d6b1897ca683::1694703906::res://.godot/exported/133200997/export-4f5293a299f7f2f3c6262bd70ffd551e-basic_dropable.scn
+res://Script/Entity/Player/Arch/arch_player.tscn::f6d9d5ebdd02dcf8230cbcc9a014048c::1695014614::res://.godot/exported/133200997/export-304f77b433242f3a293b84694c2152cd-arch_player.scn
+res://Script/Entity/Player/basic_player.tscn::5bc726f9a0f1deba82b5e1f8d41b321c::1695014614::res://.godot/exported/133200997/export-1bc61dfcc5038daaeab9e10c72b04c8a-basic_player.scn
+res://Script/Trail/trail.tscn::730579de577479bb8f15df9c36e29d9b::1694529572::res://.godot/exported/133200997/export-31b0b3721b67d93ac733fa358543c53a-trail.scn
+res://Script/curve1.tres::247da330810e5f49025acd9ef2726cb1::1694428108::res://.godot/exported/133200997/export-fd91cbe58559298052444a37be57b467-curve1.res
+res://Script/Dropable/Health/health_drop.tscn::db28dec5de37dfc1b97a7da56a063215::1694703906::res://.godot/exported/133200997/export-09ccdcb704e63580393eb06bdb9dd70c-health_drop.scn
+res://Scene/Test Scene/asdasd.tscn::f41e5ccc3fa1a0999e33d71bfe28e8a1::1694618650::res://.godot/exported/133200997/export-b388e83fd727b3d19f652d0eab702337-asdasd.scn
+res://Scene/map.tscn::b37162629cadc0abdacd425d405289cb::1695014614::res://.godot/exported/133200997/export-608b5cd7e185dcc883040a739bfab051-map.scn
+res://Script/Bullet/Arch/Bullet1/arch_bullet_1_sfx.tscn::4062f26961830826fa5d042a2b51211d::1694743987::res://.godot/exported/133200997/export-58d76390bcb0e8a61d32005cfa79ecf1-arch_bullet_1_sfx.scn
+res://Script/Bullet/Arch/Bullet2/arch_bullet_2_sfx.tscn::afedc0a3565eb4cf640562190580348f::1694743987::res://.godot/exported/133200997/export-b335ad0eebfeadc53e263dac25810019-arch_bullet_2_sfx.scn
+res://Script/Bullet/Enemy/enemy_bullet_1_sfx.tscn::8490c49c95061891fc7aa69ab78b69ad::1695014614::res://.godot/exported/133200997/export-19f78cc568e3e3bcaa773a53a132c82f-enemy_bullet_1_sfx.scn
+res://Script/Entity/Enemy/Enemy 1/enemy1.tscn::695ada0fec536489e769ee0b735888b3::1695014614::res://.godot/exported/133200997/export-6056955621ea54f129f16438f9b8bfb2-enemy1.scn
+res://Script/Entity/Enemy/Enemy 1/enemy_bullet_1.tscn::65f029b9ca8125cb079a31f815c3f765::1695014614::res://.godot/exported/133200997/export-4967167cc8890f565cd1c11d262d29c5-enemy_bullet_1.scn
+res://Script/Entity/Enemy/basic_enemy.tscn::c8bc1f93008b507e56d7184bf7544b8f::1695014614::res://.godot/exported/133200997/export-7e447c49f26fcfbf2ffffefec04101ed-basic_enemy.scn

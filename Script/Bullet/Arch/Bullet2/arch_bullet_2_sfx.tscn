@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5riwe0n4c5e3"]
+
+[ext_resource type="Script" path="res://Script/Bullet/Arch/Bullet2/arch_bullet_2_sfx.gd" id="1_12i4r"]
+[ext_resource type="AudioStream" uid="uid://wo2r56cj73fi" path="res://Resources/SFX/Shapeforms Audio Free Sound Effects/Sci Fi Weapons Cyberpunk Arsenal Preview/AUDIO/LASRGun_Classic Blaster A Fire_03.wav" id="1_uxalk"]
+
+[node name="arch_bullet_2_sfx" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_uxalk")
+volume_db = -10.0
+autoplay = true
+script = ExtResource("1_12i4r")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

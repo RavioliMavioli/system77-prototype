@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_8tpma"]
+
+[resource]
+script = ExtResource("1_8tpma")
+titles = {
+"talk_to_arch": "3"
+}
+character_names = PackedStringArray("Arch")
+first_title = "3"
+lines = {
+"1": {
+"next_id": "3",
+"text": "talk_to_arch",
+"type": "title"
+},
+"3": {
+"character": "Arch",
+"character_replacements": Array[Dictionary]([]),
+"next_id": "4",
+"text": "[[Sup|Wazzup]]! [wait=1]I'm Arch-chan [speed=0.5]Aaaaaaaaaaaaa a a a a",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[[Sup|Wazzup]]! [wait=1]I'm Arch-chan [speed=0.5]Aaaaaaaaaaaaa a a a a",
+"type": "dialogue"
+},
+"4": {
+"character": "Arch",
+"character_replacements": Array[Dictionary]([]),
+"next_id": "",
+"text": "...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "...",
+"type": "dialogue"
+}
+}
+metadata/dialogue_manager_version = "2.21.0"

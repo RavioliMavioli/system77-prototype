@@ -1,0 +1,245 @@
+[gd_scene load_steps=19 format=3 uid="uid://dtqqr1dlyi2j"]
+
+[ext_resource type="Texture2D" uid="uid://d1h7abrwpnunq" path="res://Resources/icon.svg" id="1_3pg4j"]
+[ext_resource type="Script" path="res://Script/Entity/Enemy/Test/enemy_test.gd" id="1_qnvvi"]
+[ext_resource type="Texture2D" uid="uid://dlh7xbyqdrifm" path="res://Resources/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-2.png" id="3_ea161"]
+[ext_resource type="Texture2D" uid="uid://c7hmlex8rfn1q" path="res://Resources/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-3.png" id="4_4omp2"]
+[ext_resource type="Texture2D" uid="uid://df78kmn3dngsa" path="res://Resources/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-4.png" id="5_mq3wt"]
+[ext_resource type="Texture2D" uid="uid://bbwu871e0b54b" path="res://Resources/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-5.png" id="6_tdpba"]
+[ext_resource type="Texture2D" uid="uid://dm1benbd67clv" path="res://Resources/Sunny-land-assets-files/PNG/sprites/enemy-death/enemy-death-6.png" id="7_it6o5"]
+[ext_resource type="Texture2D" uid="uid://y8m4g7o86krp" path="res://Resources/circle2.png" id="9_rpt0r"]
+[ext_resource type="Texture2D" uid="uid://ve3f4baunnfk" path="res://Resources/circle.png" id="10_rnhji"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p5fs7"]
+bounce = 0.73
+
+[sub_resource type="Animation" id="Animation_78kes"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Circle:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Circle:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Circle/Circle2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_uvq3t"]
+resource_name = "dead"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Circle:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.297302, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.5, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Circle:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.297302, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Circle/Circle2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(0.297302, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lym4w"]
+_data = {
+"RESET": SubResource("Animation_78kes"),
+"dead": SubResource("Animation_uvq3t")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwt7m"]
+size = Vector2(32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f3k1l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ea161")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4omp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mq3wt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tdpba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_it6o5")
+}],
+"loop": true,
+"name": &"boom",
+"speed": 3.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_8idty"]
+offsets = PackedFloat32Array(0, 0.705179, 0.992032, 1)
+colors = PackedColorArray(0.74902, 0.101961, 0.2, 1, 0.74902, 0.101961, 0.2, 1, 0.968627, 0.627451, 0.447059, 0.121569, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cec3c"]
+gradient = SubResource("Gradient_8idty")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f35rh"]
+lifetime_randomness = 0.43
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_max = 150.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_min = 1.0
+damping_max = 2.0
+angle_min = -720.0
+angle_max = 720.0
+scale_min = 2.0
+scale_max = 4.0
+color_ramp = SubResource("GradientTexture1D_cec3c")
+hue_variation_min = -0.05
+hue_variation_max = 0.05
+collision_mode = 1
+collision_friction = 1.0
+collision_bounce = 0.0
+
+[node name="EnemyTest" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_p5fs7")
+script = ExtResource("1_qnvvi")
+KNOCKBACK_FACTOR = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lym4w")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pwt7m")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_3pg4j")
+
+[node name="Control" type="Node2D" parent="."]
+
+[node name="ControlHealthBar" type="Node2D" parent="Control"]
+position = Vector2(0, -32)
+scale = Vector2(0.485, 0.12)
+
+[node name="HealthBar" type="TextureProgressBar" parent="Control/ControlHealthBar"]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+value = 100.0
+texture_progress = ExtResource("1_3pg4j")
+
+[node name="ControlHealthLabel" type="Node2D" parent="Control"]
+position = Vector2(44, -32)
+scale = Vector2(0.665, 0.665)
+
+[node name="HealthLabel" type="RichTextLabel" parent="Control/ControlHealthLabel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -13.0
+offset_right = 20.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+bbcode_enabled = true
+text = "[center]100[/center]"
+autowrap_mode = 2
+
+[node name="Boom" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(4.76837e-07, 1.90735e-06)
+scale = Vector2(1.2, 1.17073)
+sprite_frames = SubResource("SpriteFrames_f3k1l")
+animation = &"boom"
+speed_scale = 5.0
+
+[node name="DeadSFX" type="AudioStreamPlayer2D" parent="."]
+volume_db = -11.952
+
+[node name="Blood" type="GPUParticles2D" parent="."]
+rotation = 3.14159
+emitting = false
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_f35rh")
+lifetime = 2.0
+one_shot = true
+speed_scale = 1.5
+explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 0.03
+
+[node name="Dead" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Circle" type="Sprite2D" parent="."]
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_rpt0r")
+
+[node name="Circle2" type="Sprite2D" parent="Circle"]
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("10_rnhji")
+
+[connection signal="animation_looped" from="Boom" to="." method="_on_boom_animation_looped"]
+[connection signal="timeout" from="Dead" to="." method="_on_dead_timeout"]

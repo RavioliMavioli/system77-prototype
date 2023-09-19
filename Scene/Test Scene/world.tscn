@@ -1,0 +1,365 @@
+[gd_scene load_steps=19 format=3 uid="uid://bh2f8d6r7e5fd"]
+
+[ext_resource type="Script" path="res://Scene/Test Scene/world.gd" id="1_diou3"]
+[ext_resource type="Script" path="res://Script/Camera/player_camera.gd" id="3_4ngrj"]
+[ext_resource type="Script" path="res://Scene/Menu/BG_script.gd" id="5_83a5r"]
+[ext_resource type="Texture2D" uid="uid://b8kjjeusphp11" path="res://Resources/ravimo/wallpaperflare.com_wallpaper(1).jpg" id="6_p4sti"]
+[ext_resource type="Texture2D" uid="uid://d0asakj78qxpj" path="res://Resources/Sunny-land-assets-files/PNG/environment/layers/back.png" id="7_vxjl0"]
+
+[sub_resource type="Shader" id="Shader_r3fop"]
+code = "shader_type canvas_item;
+
+uniform vec2 cam_offset = vec2(0.0 , 0.0);
+
+void vertex(){
+	VERTEX += cam_offset;
+}
+void fragment() {
+	// Place fragment code here.
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2142e"]
+shader = SubResource("Shader_r3fop")
+shader_parameter/cam_offset = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb8f1"]
+size = Vector2(3796, 19.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivarj"]
+size = Vector2(3336, 159.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8j3jj"]
+size = Vector2(48.0002, 96.0001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oaxbu"]
+size = Vector2(70.5625, 31.9062)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3k2fc"]
+size = Vector2(64.0002, 16.0001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nenpi"]
+size = Vector2(64.0002, 88.0001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn52c"]
+size = Vector2(104, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jy4ea"]
+size = Vector2(144, 16.0001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bawe"]
+size = Vector2(316, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f7a3"]
+size = Vector2(8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l4o8i"]
+polygon = PackedVector2Array(24, 0, 56, 0, 56, 16, 24, 16)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_diou3")
+metadata/_edit_vertical_guides_ = [0.0]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+material = SubResource("ShaderMaterial_2142e")
+position = Vector2(176, 533)
+zoom = Vector2(1.5, 1.5)
+script = ExtResource("3_4ngrj")
+
+[node name="Wall" type="StaticBody2D" parent="."]
+collision_layer = 257
+collision_mask = 257
+
+[node name="gnd" type="CollisionShape2D" parent="Wall"]
+position = Vector2(1962, 561.812)
+shape = SubResource("RectangleShape2D_eb8f1")
+
+[node name="gnd2" type="CollisionShape2D" parent="Wall"]
+position = Vector2(1732, 639.25)
+shape = SubResource("RectangleShape2D_ivarj")
+
+[node name="gnd3" type="CollisionShape2D" parent="Wall"]
+position = Vector2(536, 456)
+shape = SubResource("RectangleShape2D_8j3jj")
+
+[node name="gnd4" type="CollisionShape2D" parent="Wall"]
+position = Vector2(868.719, 463.953)
+shape = SubResource("RectangleShape2D_oaxbu")
+
+[node name="gnd5" type="CollisionShape2D" parent="Wall"]
+position = Vector2(416, 504)
+shape = SubResource("RectangleShape2D_3k2fc")
+
+[node name="gnd6" type="CollisionShape2D" parent="Wall"]
+position = Vector2(480, 520)
+shape = SubResource("RectangleShape2D_3k2fc")
+
+[node name="gnd7" type="CollisionShape2D" parent="Wall"]
+position = Vector2(688, 444)
+shape = SubResource("RectangleShape2D_nenpi")
+
+[node name="gnd8" type="CollisionShape2D" parent="Wall"]
+position = Vector2(812, 268)
+shape = SubResource("RectangleShape2D_vn52c")
+
+[node name="gnd10" type="CollisionShape2D" parent="Wall"]
+position = Vector2(980, 84)
+shape = SubResource("RectangleShape2D_vn52c")
+
+[node name="gnd11" type="CollisionShape2D" parent="Wall"]
+position = Vector2(1363, 84)
+shape = SubResource("RectangleShape2D_vn52c")
+
+[node name="gnd12" type="CollisionShape2D" parent="Wall"]
+position = Vector2(1721, 84)
+shape = SubResource("RectangleShape2D_vn52c")
+
+[node name="gnd9" type="CollisionShape2D" parent="Wall"]
+position = Vector2(1112, 400)
+shape = SubResource("RectangleShape2D_jy4ea")
+
+[node name="Platform" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(1439, 398.5)
+shape = SubResource("RectangleShape2D_1bawe")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platform"]
+position = Vector2(1439, 488)
+shape = SubResource("RectangleShape2D_1bawe")
+one_way_collision = true
+
+[node name="Edges" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 0
+
+[node name="Edge" type="Area2D" parent="Edges"]
+position = Vector2(384, 496)
+collision_layer = 256
+collision_mask = 256
+
+[node name="Edge" type="CollisionShape2D" parent="Edges/Edge"]
+shape = SubResource("RectangleShape2D_5f7a3")
+
+[node name="Edge2" type="Area2D" parent="Edges"]
+position = Vector2(448, 496)
+collision_layer = 256
+collision_mask = 256
+
+[node name="Edge" type="CollisionShape2D" parent="Edges/Edge2"]
+shape = SubResource("RectangleShape2D_5f7a3")
+
+[node name="Edge3" type="Area2D" parent="Edges"]
+position = Vector2(512, 408)
+collision_layer = 256
+collision_mask = 256
+
+[node name="Edge" type="CollisionShape2D" parent="Edges/Edge3"]
+shape = SubResource("RectangleShape2D_5f7a3")
+
+[node name="Edge4" type="Area2D" parent="Edges"]
+position = Vector2(560, 408)
+collision_layer = 256
+collision_mask = 256
+
+[node name="Edge" type="CollisionShape2D" parent="Edges/Edge4"]
+shape = SubResource("RectangleShape2D_5f7a3")
+
+[node name="Edge5" type="Area2D" parent="Edges"]
+position = Vector2(656, 400)
+collision_layer = 256
+collision_mask = 256
+
+[node name="Edge" type="CollisionShape2D" parent="Edges/Edge5"]
+shape = SubResource("RectangleShape2D_5f7a3")
+
+[node name="Edge6" type="Area2D" parent="Edges"]
+position = Vector2(720, 400)
+collision_layer = 256
+collision_mask = 256
+
+[node name="Edge" type="CollisionShape2D" parent="Edges/Edge6"]
+shape = SubResource("RectangleShape2D_5f7a3")
+
+[node name="Edge7" type="Area2D" parent="Edges"]
+position = Vector2(832, 448)
+collision_layer = 256
+collision_mask = 256
+
+[node name="Edge" type="CollisionShape2D" parent="Edges/Edge7"]
+shape = SubResource("RectangleShape2D_5f7a3")
+
+[node name="Edge8" type="Area2D" parent="Edges"]
+position = Vector2(904, 448)
+collision_layer = 256
+collision_mask = 256
+
+[node name="Edge" type="CollisionShape2D" parent="Edges/Edge8"]
+shape = SubResource("RectangleShape2D_5f7a3")
+
+[node name="Edge9" type="Area2D" parent="Edges"]
+position = Vector2(1040, 392)
+collision_layer = 256
+collision_mask = 256
+
+[node name="Edge" type="CollisionShape2D" parent="Edges/Edge9"]
+shape = SubResource("RectangleShape2D_5f7a3")
+
+[node name="Edge10" type="Area2D" parent="Edges"]
+position = Vector2(1184, 392)
+collision_layer = 256
+collision_mask = 256
+
+[node name="Edge" type="CollisionShape2D" parent="Edges/Edge10"]
+shape = SubResource("RectangleShape2D_5f7a3")
+
+[node name="Edge11" type="Area2D" parent="Edges"]
+position = Vector2(864, 248)
+collision_layer = 256
+collision_mask = 256
+
+[node name="Edge" type="CollisionShape2D" parent="Edges/Edge11"]
+shape = SubResource("RectangleShape2D_5f7a3")
+
+[node name="Edge12" type="Area2D" parent="Edges"]
+position = Vector2(760, 248)
+collision_layer = 256
+collision_mask = 256
+
+[node name="Edge" type="CollisionShape2D" parent="Edges/Edge12"]
+shape = SubResource("RectangleShape2D_5f7a3")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 64.0
+offset_top = 552.0
+offset_right = 3200.0
+offset_bottom = 648.0
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 384.0
+offset_top = 496.0
+offset_right = 448.0
+offset_bottom = 512.0
+
+[node name="Panel6" type="Panel" parent="."]
+offset_left = 448.0
+offset_top = 512.0
+offset_right = 512.0
+offset_bottom = 528.0
+
+[node name="Panel3" type="Panel" parent="."]
+offset_left = 512.0
+offset_top = 408.0
+offset_right = 560.0
+offset_bottom = 504.0
+
+[node name="Panel10" type="Panel" parent="."]
+offset_left = 512.0
+offset_top = 408.0
+offset_right = 560.0
+offset_bottom = 504.0
+
+[node name="Panel4" type="Panel" parent="."]
+offset_left = 832.0
+offset_top = 448.0
+offset_right = 904.0
+offset_bottom = 480.0
+
+[node name="Panel7" type="Panel" parent="."]
+offset_left = 656.0
+offset_top = 400.0
+offset_right = 720.0
+offset_bottom = 488.0
+
+[node name="Panel8" type="Panel" parent="."]
+offset_left = 760.0
+offset_top = 248.0
+offset_right = 864.0
+offset_bottom = 288.0
+
+[node name="Panel13" type="Panel" parent="."]
+offset_left = 928.0
+offset_top = 64.0
+offset_right = 1032.0
+offset_bottom = 104.0
+
+[node name="Panel14" type="Panel" parent="."]
+offset_left = 1311.0
+offset_top = 64.0
+offset_right = 1415.0
+offset_bottom = 104.0
+
+[node name="Panel15" type="Panel" parent="."]
+offset_left = 1669.0
+offset_top = 64.0
+offset_right = 1773.0
+offset_bottom = 104.0
+
+[node name="Panel9" type="Panel" parent="."]
+offset_left = 1040.0
+offset_top = 392.0
+offset_right = 1184.0
+offset_bottom = 408.0
+
+[node name="Panel11" type="Panel" parent="."]
+offset_left = 1280.0
+offset_top = 485.0
+offset_right = 1597.0
+offset_bottom = 501.0
+
+[node name="Panel12" type="Panel" parent="."]
+offset_left = 1280.0
+offset_top = 396.0
+offset_right = 1597.0
+offset_bottom = 412.0
+
+[node name="Panel5" type="Panel" parent="."]
+offset_left = 2680.0
+offset_top = 304.0
+offset_right = 2728.0
+offset_bottom = 400.0
+
+[node name="BG" type="ParallaxBackground" parent="."]
+script = ExtResource("5_83a5r")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BG"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="WallpaperflarecomWallpaper(1)" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(280, 432)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("6_p4sti")
+metadata/_edit_lock_ = true
+
+[node name="Back" type="Sprite2D" parent="BG/ParallaxLayer"]
+visible = false
+position = Vector2(312, 304)
+scale = Vector2(2, 2)
+texture = ExtResource("7_vxjl0")
+
+[node name="Back2" type="Sprite2D" parent="BG/ParallaxLayer"]
+visible = false
+position = Vector2(312, 784)
+scale = Vector2(2, -2)
+texture = ExtResource("7_vxjl0")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="BG"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(272, 512)
+occluder = SubResource("OccluderPolygon2D_l4o8i")
+
+[node name="Enemyspawn" type="Marker2D" parent="."]
+position = Vector2(136, 344)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(176, 464)
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

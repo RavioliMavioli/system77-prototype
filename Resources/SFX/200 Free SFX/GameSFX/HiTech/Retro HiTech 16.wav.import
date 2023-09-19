@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cyq4hpsmj6tbt"
+path="res://.godot/imported/Retro HiTech 16.wav-1dcdad342de480a3c8bdf9a22804c9c5.sample"
+
+[deps]
+
+source_file="res://Resources/SFX/200 Free SFX/GameSFX/HiTech/Retro HiTech 16.wav"
+dest_files=["res://.godot/imported/Retro HiTech 16.wav-1dcdad342de480a3c8bdf9a22804c9c5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

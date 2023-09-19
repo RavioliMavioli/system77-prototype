@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d12u7n5cynqhy"
+path="res://.godot/imported/FUI Ping Triplet Echo.wav-ca65e19d1c9f7d183b9c25e65f9a7315.sample"
+
+[deps]
+
+source_file="res://Resources/SFX/Shapeforms Audio Free Sound Effects/Future UI Preview/Audio/FUI Ping Triplet Echo.wav"
+dest_files=["res://.godot/imported/FUI Ping Triplet Echo.wav-ca65e19d1c9f7d183b9c25e65f9a7315.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

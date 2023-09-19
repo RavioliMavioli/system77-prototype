@@ -1,0 +1,150 @@
+[gd_scene load_steps=12 format=3 uid="uid://dvmijn00tsu2i"]
+
+[ext_resource type="Script" path="res://Script/Dropable/basic_dropable.gd" id="1_uqi22"]
+[ext_resource type="Texture2D" uid="uid://es1xqx6qlbyn" path="res://Resources/ravimo/light.png" id="2_ovdol"]
+[ext_resource type="AudioStream" uid="uid://cvgu7l8i7truf" path="res://Resources/SFX/Pixabay/bulletcase.mp3" id="3_r17ee"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eg3re"]
+bounce = 0.3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxesx"]
+size = Vector2(14, 14)
+
+[sub_resource type="Animation" id="Animation_myqs0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_a50eo"]
+resource_name = "animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4.5, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4.5, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_tq3ls"]
+resource_name = "pick"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v8coa"]
+_data = {
+"RESET": SubResource("Animation_myqs0"),
+"animation": SubResource("Animation_a50eo"),
+"pick": SubResource("Animation_tq3ls")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ehs0x"]
+radius = 94.1913
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ot4wh"]
+size = Vector2(16, 16)
+
+[node name="Dropable" type="RigidBody2D"]
+collision_layer = 512
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_eg3re")
+script = ExtResource("1_uqi22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sxesx")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 5)
+range_z_min = -4096
+range_z_max = 4096
+shadow_enabled = true
+texture = ExtResource("2_ovdol")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_v8coa")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ehs0x")
+
+[node name="Ground" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_ot4wh")
+
+[node name="SFXDrop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_r17ee")
+volume_db = -6.0
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Ground" to="." method="_on_ground_body_entered"]

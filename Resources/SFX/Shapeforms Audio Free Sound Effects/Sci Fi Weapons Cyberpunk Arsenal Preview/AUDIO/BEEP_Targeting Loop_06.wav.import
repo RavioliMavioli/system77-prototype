@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://nq7bbleqjwn5"
+path="res://.godot/imported/BEEP_Targeting Loop_06.wav-1a5cf652485e5351e20b13118c42237b.sample"
+
+[deps]
+
+source_file="res://Resources/SFX/Shapeforms Audio Free Sound Effects/Sci Fi Weapons Cyberpunk Arsenal Preview/AUDIO/BEEP_Targeting Loop_06.wav"
+dest_files=["res://.godot/imported/BEEP_Targeting Loop_06.wav-1a5cf652485e5351e20b13118c42237b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkwi0cmxtyml2"]
+
+[ext_resource type="Texture2D" uid="uid://y4e0dhc1tu8s" path="res://Resources/crosshair.png" id="1_72go7"]
+
+[node name="base_laser_beam" type="RayCast2D"]
+
+[node name="Crosshair" type="Sprite2D" parent="."]
+position = Vector2(0, 72)
+texture = ExtResource("1_72go7")
