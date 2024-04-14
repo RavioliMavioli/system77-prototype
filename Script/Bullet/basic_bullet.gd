@@ -19,7 +19,7 @@ var unix_time: float
 var start_time: float = 0.0
 var start_collided_time: float = 0.0
 
-var query: PhysicsShapeQueryParameters2D = PhysicsShapeQueryParameters2D.new()
+var query: PhysicsPointQueryParameters2D = PhysicsPointQueryParameters2D.new()
 
 func bullet_behaviour(delta):
 	var distance = SPEED*delta
@@ -32,7 +32,7 @@ func custom_ready():
 func _ready():
 	start_time = Time.get_unix_time_from_system()
 	
-	query.set_shape(collision.shape)
+#	query.set_shape(collision.shape)
 	query.collide_with_bodies = true
 	query.collide_with_areas = true
 	query.collision_mask = collision_mask_1 | collision_mask_2
@@ -50,8 +50,8 @@ func _physics_process(delta):
 	if !collided:
 		bullet_behaviour(delta)
 		
-		query.transform = global_transform
-		var results: Array = get_world_2d().direct_space_state.intersect_shape(query, 1)
+		query.position = global_position
+		var results: Array = get_world_2d().direct_space_state.intersect_point(query, 1)
 		for result in results:
 			var entity = result["collider"]
 			if entity.has_method("get_shot"):

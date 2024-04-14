@@ -83,18 +83,18 @@ func _physics_process(delta):
 	
 	#################### STATE ########################
 	
-	if motion_mode == CharacterBody2D.MOTION_MODE_GROUNDED:
-		if velocity.y < 0:
-			current_state = state.find("jump")
-		else:
-			current_state = state.find("fall")
-		
-		if velocity.x == 0:
-			current_state = state.find("idle")
-		else:
-			current_state = state.find("walk")
-	else:
-		current_state = state.find("fly")
+#	if motion_mode == CharacterBody2D.MOTION_MODE_GROUNDED:
+#		if velocity.y < 0:
+#			current_state = state.find("jump")
+#		else:
+#			current_state = state.find("fall")
+#
+#		if velocity.x == 0:
+#			current_state = state.find("idle")
+#		else:
+#			current_state = state.find("walk")
+#	else:
+#		current_state = state.find("fly")
 	
 	####################
 	move_and_slide()
