@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cn1r3wp168dgo" path="res://Resources/UI/health.png" id="2_g8dbi"]
 [ext_resource type="AudioStream" uid="uid://dfkjh6vi1b81g" path="res://Resources/SFX/200 Free SFX/Retro Impact 20.wav" id="3_2koh1"]
 [ext_resource type="AudioStream" uid="uid://b3x3gvh0ut6yr" path="res://Resources/SFX/8-bit 16-bit Sound Effects (x25) Pack/Hit damage 1.wav" id="5_6o7pl"]
-[ext_resource type="Texture2D" uid="uid://4jdrpwclvxxs" path="res://Resources/circle2.png" id="9_7nkom"]
-[ext_resource type="Texture2D" uid="uid://da2mcb23simvp" path="res://Resources/circle.png" id="10_eq5k2"]
+[ext_resource type="Texture2D" uid="uid://dn8pgdswfuepu" path="res://Resources/circle2.png" id="9_7nkom"]
+[ext_resource type="Texture2D" uid="uid://c7hmmqp4nak5e" path="res://Resources/circle.png" id="10_eq5k2"]
 
 [sub_resource type="Animation" id="Animation_yvnxw"]
 length = 0.001
@@ -306,15 +306,13 @@ gradient = SubResource("Gradient_8idty")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f35rh"]
 lifetime_randomness = 0.43
 particle_flag_disable_z = true
-spread = 180.0
-gravity = Vector3(0, 98, 0)
-initial_velocity_max = 150.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-damping_min = 1.0
-damping_max = 2.0
 angle_min = -720.0
 angle_max = 720.0
+spread = 180.0
+initial_velocity_max = 150.0
+gravity = Vector3(0, 98, 0)
+damping_min = 1.0
+damping_max = 2.0
 scale_min = 3.0
 scale_max = 5.0
 color_ramp = SubResource("GradientTexture1D_cec3c")

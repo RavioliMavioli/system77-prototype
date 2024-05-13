@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cpq5tuqltaf6h" path="res://Script/Entity/Enemy/basic_enemy.tscn" id="1_gi30a"]
 [ext_resource type="Script" path="res://Script/Entity/Enemy/Enemy 1/enemy1.gd" id="2_f1rim"]
-[ext_resource type="Texture2D" uid="uid://di3xv2ehwkkj6" path="res://Resources/icon.svg" id="2_p2v8w"]
+[ext_resource type="Texture2D" uid="uid://bqvvvct3rcd3m" path="res://Resources/icon.svg" id="2_p2v8w"]
 [ext_resource type="Texture2D" uid="uid://duy4xvj2uow4e" path="res://Resources/Enemy/Robotic Drone Sprite Sheet.png" id="4_snkjj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bawrw"]

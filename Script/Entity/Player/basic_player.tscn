@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Script/Entity/Player/basic_player_control.gd" id="1_e8txh"]
 [ext_resource type="Script" path="res://Script/Entity/Player/hitbox.gd" id="2_d3t8x"]
-[ext_resource type="Texture2D" uid="uid://cmvavuat4he5m" path="res://Resources/crosshair.png" id="3_37rd2"]
-[ext_resource type="AudioStream" uid="uid://cukt7xxv7hqqy" path="res://Resources/jump1.mp3" id="4_aha5r"]
-[ext_resource type="AudioStream" uid="uid://b4ihhrxtp7tr7" path="res://Resources/jump2.mp3" id="5_5nb0b"]
-[ext_resource type="AudioStream" uid="uid://bl4mgyehtkhf4" path="res://Resources/jump3.mp3" id="6_30ncf"]
+[ext_resource type="Texture2D" uid="uid://b8y4heu7qf0sa" path="res://Resources/crosshair.png" id="3_37rd2"]
+[ext_resource type="AudioStream" uid="uid://dpdpygbrode7w" path="res://Resources/jump1.mp3" id="4_aha5r"]
+[ext_resource type="AudioStream" uid="uid://lh56cb685t4p" path="res://Resources/jump2.mp3" id="5_5nb0b"]
+[ext_resource type="AudioStream" uid="uid://bqv4hx7axpggs" path="res://Resources/jump3.mp3" id="6_30ncf"]
 [ext_resource type="AudioStream" uid="uid://cns4ud0htagla" path="res://Resources/SFX/8-bit 16-bit Sound Effects (x25) Pack/Boss hit 1.wav" id="7_2c13n"]
 [ext_resource type="FontFile" uid="uid://cno3wcun2iakl" path="res://Fonts/Urbanist-fonts/Urbanist-Regular.ttf" id="7_v2b60"]
 

@@ -89,8 +89,6 @@ theme = ExtResource("2_dwkvp")
 visible = false
 layout_mode = 2
 item_count = 2
-item_0/text = ""
-item_1/text = ""
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Items"]
 visible = false
