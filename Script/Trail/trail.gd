@@ -5,7 +5,7 @@ var body: Object
 var MAX_LENGTH: int
 
 func _physics_process(delta):
-	if body != null:
+	if is_instance_valid(body):
 		queue_trail.push_front(body.global_position)
 	
 		if queue_trail.size() > MAX_LENGTH:

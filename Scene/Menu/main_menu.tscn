@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ccuxe7spivfka" path="res://Scene/Start Screen/start_screen.tscn" id="3_uw5ej"]
 [ext_resource type="FontFile" uid="uid://bq5m6ur305wen" path="res://Fonts/Urbanist-fonts/Urbanist-Bold.ttf" id="4_pfj47"]
 [ext_resource type="Shader" path="res://Scene/Start Screen/chromatic_aberration.gdshader" id="5_3qhtj"]
-[ext_resource type="Texture2D" uid="uid://di3xv2ehwkkj6" path="res://Resources/icon.svg" id="6_w7eql"]
+[ext_resource type="Texture2D" uid="uid://bqvvvct3rcd3m" path="res://Resources/icon.svg" id="6_w7eql"]
 [ext_resource type="Shader" path="res://Shader/blur.gdshader" id="7_ih56l"]
 [ext_resource type="FontFile" uid="uid://cno3wcun2iakl" path="res://Fonts/Urbanist-fonts/Urbanist-Regular.ttf" id="9_l2lax"]
 [ext_resource type="Script" path="res://Script/chromatic_aberration.gd" id="10_xuvpq"]

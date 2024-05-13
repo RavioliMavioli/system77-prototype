@@ -26,7 +26,7 @@ func bullet_behaviour(delta):
 	#position += motion_x
 	#position += motion_y
 	
-	if target != null and not target.is_dead():
+	if is_instance_valid(target) and not target.is_dead():
 		direction = global_position.direction_to(target.global_position)
 	var desired_velocity = direction * SPEED
 	var change = (desired_velocity - velocity) * drag_factor

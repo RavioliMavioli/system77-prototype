@@ -139,7 +139,7 @@ func _on_rmb_shoot_timeout():
 		if current_bullet_target < RMB_BULLET_AMMOUNT_PER_TARGET:
 			if Global.current_locked < Global.lock_queue.size():
 				var current_target = Global.lock_queue[Global.current_locked]
-				if Global.lock_queue[Global.current_locked] != null and !Global.lock_queue[Global.current_locked].is_dead():
+				if is_instance_valid(Global.lock_queue[Global.current_locked]) and !Global.lock_queue[Global.current_locked].is_dead():
 					shoot_r.initialize_for_player()
 					shoot_r.shoot_homing_missile(current_target)
 					Global.current_locked += 1

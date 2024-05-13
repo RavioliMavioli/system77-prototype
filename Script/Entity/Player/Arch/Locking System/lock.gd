@@ -11,7 +11,7 @@ func _physics_process(delta):
 	if !Input.is_action_pressed("RMB"):
 		$AnimationPlayer.play("cancel")
 	if locked:
-		if target != null:
+		if is_instance_valid(target):
 			#global_position = lerp(global_position, target.global_position, delta*10)
 			global_position = target.global_position
 			if target.has_method("is_dead") and target.is_dead():

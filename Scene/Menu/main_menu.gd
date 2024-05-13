@@ -77,7 +77,7 @@ func menu(button, mouse_pos, button_pressed):
 		if opacity <= 255:
 			opacity += 1
 	
-	if button_pressed != null:
+	if is_instance_valid(button_pressed):
 		button_pressed.global_position = lerp(button_pressed.global_position, sub_menu_position_offset, $BG.lerp_weight)
 	$MenuText.global_position = lerp($MenuText.global_position, menu_position_offset, $BG.lerp_weight)
 

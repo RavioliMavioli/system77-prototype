@@ -25,7 +25,7 @@ func comically_strong_shake():
 	
 func screen_shake(factor:float, time_duration:float):
 	
-	if duration == null or physics == null:
+	if not is_instance_valid(duration) or not is_instance_valid(physics):
 		duration = Timer.new()
 		physics = Timer.new()
 		duration.timeout.connect(_on_duration_timeout)
